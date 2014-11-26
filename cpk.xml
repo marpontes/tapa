@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cpk>
+    <elementTypes defaultElement="main">
+        <elementType name="Dashboard" class="pt.webdetails.cpk.elements.impl.DashboardElement">
+            <elementLocations>
+                <elementLocation path="dashboards/admin" isRecursive="true" pattern=".*\.wcdf" adminOnly="true"/>
+                <elementLocation path="dashboards/" isRecursive="true" pattern=".*\.wcdf" adminOnly="false"/>
+            </elementLocations>
+        </elementType>
+        <elementType name="Kettle" class="pt.webdetails.cpk.elements.impl.KettleJobElement">
+            <elementLocations>
+                <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.kjb" adminOnly="true"/>
+                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern=".*\.kjb" adminOnly="false"/>
+            </elementLocations>
+        </elementType>
+        <elementType name="Kettle" class="pt.webdetails.cpk.elements.impl.KettleTransformationElement">
+            <elementLocations>
+                <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.ktr" adminOnly="true"/>
+                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern=".*\.ktr" adminOnly="false"/>
+            </elementLocations>
+        </elementType>
+    </elementTypes> 
+    <info>
+        <CPK_version>5</CPK_version>
+        <name>Tapa</name>
+        <creation_date>2014-11-26</creation_date>
+    </info>
+</cpk> 
