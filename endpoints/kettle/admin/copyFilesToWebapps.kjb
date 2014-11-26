@@ -332,6 +332,16 @@
           <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;install&#x2f;pentaho-style&#x2f;tapa</variable_value>
           <variable_type>ROOT_JOB</variable_type>
         </field>
+        <field>
+          <variable_name>mantle_path</variable_name>
+          <variable_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;mantle</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>mantle_install_path</variable_name>
+          <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;install&#x2f;mantle</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -423,6 +433,11 @@
           <destination_filefolder>&#x24;&#x7b;tapa_assets_path&#x7d;</destination_filefolder>
           <wildcard>.&#x2a;</wildcard>
         </field>
+        <field>
+          <source_filefolder>&#x24;&#x7b;mantle_install_path&#x7d;</source_filefolder>
+          <destination_filefolder>&#x24;&#x7b;mantle_path&#x7d;</destination_filefolder>
+          <wildcard>.&#x2a;</wildcard>
+        </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -438,8 +453,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>352</yloc>
+      <xloc>464</xloc>
+      <yloc>336</yloc>
       </entry>
     <entry>
       <name>rename original puc login 2</name>
@@ -516,7 +531,7 @@
       <to>Checks if assets folder exists</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -577,6 +592,15 @@
     <hop>
       <from>paths jsp and assetes</from>
       <to>rename original puc login</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>install jspfiles</from>
+      <to>Copy Files</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
