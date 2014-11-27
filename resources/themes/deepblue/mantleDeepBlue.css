@@ -1,0 +1,1519 @@
+
+.pentaho-admin-panel {
+  background: transparent;
+}
+
+#adminContentPanel {
+  padding-left: 40px;
+}
+
+#adminContentPanel.vbox > tbody > tr > td {
+  height: 100%;
+}
+
+#contentCleanerPanel .pentaho-button {
+  margin-left:  0;
+  margin-right: 4px;
+  margin-bottom: 20px;
+}
+
+.applicationShell > div > div {
+  overflow-y: scroll;
+}
+
+.schedulerPerspective {
+  background: transparent;
+  width: 1230px;
+  margin: 0 auto;
+  padding: 30px 40px 40px 40px;
+}
+
+.workspaceHeading {
+  color: #5d6672;
+  font-size: 22px;
+  padding: 0px 0px 0px 0px;
+  font-family: OpenSansLight, Helvetica, Arial, Sans serif;
+  cursor: default;
+}
+
+.schedulesPanel .workspaceHeading {
+  padding: 0px 0px 10px 0px;
+}
+
+.schedule-dialog-content {
+}
+
+.schedulerPerspective-wrapper {
+  margin: 0 auto;
+}
+
+.schedulerPerspective-wrapper table {
+  width: 100%;
+}
+
+.schedulerPerspective-wrapper table.toolbar-button {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.schedulerPerspective-wrapper table.toolbar-button img {
+  position: absolute;
+  left: 50%;
+  margin-left: -11px;
+  top: 50%;
+  margin-top: -11px;
+}
+
+.admin-perspective {
+  padding-top: 40px;
+  padding-left: 40px;
+  background: transparent;
+  height: 100%;
+  width: 1230px;
+  margin: 0 auto;
+}
+
+#adminCatTree .tree-scroll-panel {
+  background: transparent;
+}
+
+#adminCatTree .gwt-Label {
+  font-size: 16px;
+  color: #5d6672;
+  cursor: pointer;
+  cursor: hand;
+  height: 26px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  background: url('images/16x16_right.png');
+  background-position: 95% center;
+  background-repeat: no-repeat;
+  font-family: OpenSansLight, Helvetica, Arial, Sans serif;
+}
+
+.ie  #adminCatTree .gwt-Label {
+  height: 36px;
+}
+
+#adminCatTree .gwt-TreeItem-selected .gwt-Label {
+  color: #ffffff;
+  cursor: pointer;
+  cursor: hand;
+  background: url('images/16x16_right_white.png');
+  background-position: 95% center;
+  background-repeat: no-repeat;
+}
+
+#adminCatTree .tree-item-custom-widget-selected {
+}
+
+#adminCatTree .tree-item-custom-widget {
+  border-top: 0px solid transparent;
+  padding: 0;
+  width: auto !important;
+}
+
+.adminCatTreeItem {
+  border-top: 1px solid #dfdfdf;
+}
+
+.adminCatTreeItemLast {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.select-folder-tree {
+  height: 360px;
+  overflow: auto;
+  width: 380px;
+  border: 1px solid #CFCFCF;
+  background-color: white;
+}
+
+.mantle-perspective-toggle {
+  background: black;
+  color: white;
+  padding: 4px 5px 3px 5px;
+  cursor: pointer;
+  cursor: hand;
+  white-space: nowrap;
+  border-top: 2px solid black;
+}
+
+.mantle-perspective-toggle-up {
+  color: #e3e3e3;
+}
+
+.mantle-perspective-toggle-up-disabled {
+  color: #999999;
+}
+
+.mantle-perspective-toggle-up-hovering {
+  color: white;
+}
+
+.mantle-perspective-toggle-down {
+  border-top: 2px solid #39a74a;
+  color: white;
+}
+
+.mantle-perspective-toggle-down-hovering {
+  border-top: 2px solid #39a74a;
+  color: white;
+}
+
+#mainMenubar {
+  padding: 0 0 0px 0;
+  position: absolute;
+  top: 0;
+  left: 12px;
+  -webkit-transition: all .500ms ease-in-out;
+}
+
+.mantle-perspective-switcher {
+  height: 28px;
+}
+
+.puc-logo {
+  background: url('images/logo.png') no-repeat center center;
+}
+
+.puc-logo-spacer {
+  width: 152px;
+  height: 75px;
+}
+
+.launchButtonPanel {
+  background-image: url(../../quicklaunch_icon_panel.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.launchPanel {
+  background-color: white;
+  background-image: url(../../quicklaunch_bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.reportParameterDisclosurePanel {
+  background-color: #d8d8d8;
+  border-bottom: 1px solid #848484;
+}
+
+.errorLabel {
+  color: red;
+}
+
+.reportPageControl {
+  border: 1px solid black;
+}
+
+.pageControlPanel {
+  background-color: LightCyan;
+  border-bottom: 1px solid black;
+}
+
+.solutionDisclosureHeaderWidget {
+  background-color: #EEEEEE;
+  border: 5px solid #EEEEEE;
+  color: #39a74a;
+}
+
+.solutionDisclosureHeaderWidgetHover {
+  background-color: #DDDDDD;
+  border: 5px solid #DDDDDD;
+  color: #39a74a;
+}
+
+.solutionDisclosureWidget {
+  background-color: #EEEEEE;
+  border: 1px solid #808080;
+  color: #39a74a;
+}
+
+.classicNavigatorTable {
+  background-color: white;
+}
+
+.classicNavigatorTableCell {
+  border-bottom: 1px solid #808080;
+}
+
+.classicNavigatorTableHeader {
+  background-color: #C2A2CF;
+  color: black;
+  border: 1px solid #808080;
+}
+
+.classicNavigatorFileLabelHover {
+  color: #39a74a;
+}
+
+.classicNavigatorFileLabel {
+  color: #39a74a;
+}
+
+.numSolutionsLabel {
+  color: #39a74a;
+}
+
+.breadCrumbLabel {
+  color: #39a74a;
+}
+
+.breadCrumbLabelHover {
+  color: #39a74a;
+}
+
+.hiddenFileLabel {
+  width: 100%;
+  opacity: .5;
+  font-style: italic;
+  background-color: #ffffff;
+}
+
+.hiddenFileLabelSelected {
+  width: 100%;
+  opacity: .7;
+  font-style: italic;
+  background-color: #dbdbdb;
+}
+
+.fileLabel {
+  background-color: #ffffff;
+}
+
+.fileLabelSelected {
+  background-color: #dbdbdb;
+}
+
+.permissionsTable {
+  border: 1px solid #cfcfcf;
+}
+
+.filesPanelMenuLabel {
+  background-color: #d8d8d8;
+  background-image: url(../../images/subtoolbar_bg.png);
+  background-position: center;
+  background-repeat: repeat-x;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #848484;
+}
+
+.browsePanelMenuLabel {
+  background-color: #d8d8d8;
+  background-image: url(../../images/subtoolbar_bg.png);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #848484;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+.mantle-default-tab-background {
+  background: #FFF;
+  /*
+    background: -moz-linear-gradient(top,  #f1f1f1 0%, #fcfcfc 23%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1f1), color-stop(23%,#fcfcfc));
+    background: -webkit-linear-gradient(top,  #f1f1f1 0%,#fcfcfc 23%);
+    background: -o-linear-gradient(top,  #f1f1f1 0%,#fcfcfc 23%);
+    background: -ms-linear-gradient(top,  #f1f1f1 0%,#fcfcfc 23%);
+    background: linear-gradient(to bottom,  #f1f1f1 0%,#fcfcfc 23%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#fcfcfc',GradientType=0 ); */
+
+}
+
+.mantle-white-tab-background {
+  background-color: white;
+}
+
+#mainToolbar {
+  padding: 0px 0px 0px 0px;
+}
+
+.puc-horizontal-split-panel {
+}
+
+.puc-horizontal-split-panel .hsplitter {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+}
+
+.puc-horizontal-split-panel .left {
+  background-color: #E8F7EE;
+}
+
+.puc-vertical-split-panel {
+}
+
+#loading {
+  background: white;
+  border: 1px solid #ccc;
+}
+
+#loading a {
+  background: white;
+  color: #228855;
+}
+
+#loading .loading-indicator {
+  background: white;
+  color: #444;
+  font: bold 13px tahoma, arial, helvetica;
+}
+
+#loading .loading-indicator img {
+  background: white;
+}
+
+#loading-msg {
+  background: white;
+  font: normal 10px arial, tahoma, sans-serif;
+}
+
+a, a:visited {
+  color: #39a74a;
+}
+
+a:active, a:hover {
+  color: #39a74a;
+}
+
+.filePropertyTabContent {
+  border-left: 2px solid #CFCFCF;
+  border-bottom: 2px solid #CFCFCF;
+  border-right: 2px solid #CFCFCF;
+}
+
+.filePropertiesDialogContent {
+  background: white;
+}
+
+.backgroundContentAction {
+  color: blue;
+  font-size: 13px;
+}
+
+.backgroundContentTable {
+  background: black;
+  font-size: 13px;
+}
+
+.backgroundContentHeaderTableCell {
+  background-color: #8ac6b3;
+  /*
+   background: -moz-linear-gradient(top, #1a1a1a 0%, #333333 50%, #000000 51%, #000000 100%);
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1a1a1a), color-stop(50%,#333333), color-stop(51%,#000000), color-stop(100%,#000000));
+   background: -webkit-linear-gradient(top, #1a1a1a 0%,#333333 50%,#000000 51%,#000000 100%);
+   background: -o-linear-gradient(top, #1a1a1a 0%,#333333 50%,#000000 51%,#000000 100%);
+   background: -ms-linear-gradient(top, #1a1a1a 0%,#333333 50%,#000000 51%,#000000 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#FF777777', endColorstr = '#FF000000');
+   zoom: 1;
+   background: linear-gradient(top, #1a1a1a 0%,#333333 50%,#000000 51%,#000000 100%); */
+}
+
+.backgroundContentHeaderTableCell .gwt-Label {
+  color: white;
+}
+
+.backgroundContentHeaderTableCellRight {
+
+  background-color: #8ac6b3;
+  /*
+   background: -moz-linear-gradient(top, #1a1a1a 0%, #333333 50%, #000000 51%, #000000 100%);
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1a1a1a), color-stop(50%,#333333), color-stop(51%,#000000), color-stop(100%,#000000));
+   background: -webkit-linear-gradient(top, #1a1a1a 0%,#333333 50%,#000000 51%,#000000 100%);
+   background: -o-linear-gradient(top, #1a1a1a 0%,#333333 50%,#000000 51%,#000000 100%);
+   background: -ms-linear-gradient(top, #1a1a1a 0%,#333333 50%,#000000 51%,#000000 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#FF777777', endColorstr = '#FF000000');
+   zoom: 1;
+   background: linear-gradient(top, #1a1a1a 0%,#333333 50%,#000000 51%,#000000 100%); */
+
+}
+
+.backgroundContentHeaderTableCellRight .gwt-Label {
+  color: white;
+}
+
+/* In IE9, in quirks mode, 
+  the class .backgroundContentHeaderTableCell's filter gradient 
+  is not "propagated" from the _col_ elements to the corresponding _th_ element.
+  It works if the filter is applied directly to th element, though.
+  For precaution, this fix is only applied to the Schedule table (BISERVER-8539).
+*/
+.IE #schedule-table th {
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#FF777777', endColorstr = '#FF000000');*/
+}
+
+.backgroundContentTableCell {
+  background-color: white;
+}
+
+.backgroundContentTableCellRight {
+  background-color: white;
+}
+
+.backgroundContentTableCellBottom {
+  background-color: white;
+}
+
+.backgroundContentTableCellBottomRight {
+  background-color: white;
+}
+
+.gwt-Button {
+  background-image: expression('url(buttonbg.gif)');
+  background-image: url(../../buttonbg.gif);
+  font-weight: plain;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+}
+
+.gwt-Button:hover {
+  background-image: url(../../buttonhoverbg.gif);
+  background-image: expression('url(buttonhoverbg.gif)');
+  font-weight: plain;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+}
+
+.gwt-Button:disabled {
+  background-image: url(../../buttonbg.gif);
+  background-image: expression('url(buttonbg.gif)');
+  border-style: solid;
+  border-color: #c0c0c0;
+  border-width: 1px;
+}
+
+.gwt-Canvas {
+}
+
+.gwt-CheckBox {
+}
+
+.gwt-CheckBox label {
+  margin: 0px 0px 0px 4px;
+}
+
+.dialogContentPanel {
+  background-color: #e8faee;
+  font-size: 12px;
+}
+
+.viewContentDialogBox {
+  background-color: #ececec;
+  border: 3px solid #000000;
+}
+
+.viewContentDialogBox .Caption {
+  background-color: #d0d0d0;
+  color: black;
+  cursor: move;
+  border-bottom: 1px solid #000000;
+}
+
+.gwt-FileUpload {
+}
+
+.gwt-Frame {
+  border: none;
+  overflow: visible;
+  width: 100%;
+}
+
+.workspace-resource-link {
+  color: #39a74a;
+  text-decoration: underline;
+  cursor: hand;
+  cursor: pointer;
+}
+
+.workspacePanel {
+  background-color: #d4dbd6;
+}
+
+.noDataForScheduleTable {
+  background-color: white;
+}
+
+.workspaceDisclosureContentWrapper {
+  background-color: #9f9f9f;
+  border: 1px solid black;
+}
+
+.IE .workspaceDisclosureContentWrapper {
+  background-color: #9f9f9f;
+  border: 0px solid transparent;
+}
+
+.workspaceMessage {
+  font-size: 13px;
+}
+
+.gwt-TextBox-readonly {
+  color: #888;
+}
+
+.gwt-StackPanel {
+  background-color: #EEEEEE;
+  border: 1px solid #808080;
+}
+
+.gwt-StackPanel .gwt-StackPanelItem {
+  background-color: #EEEEEE;
+}
+
+.gwt-PushButton-up {
+  background-color: #C3FFD9;
+  border: 2px solid transparent;
+  border-color: #E8FFF1 rgb(157, 174, 205) rgb(157, 174, 205) rgb(232, 241, 255);
+}
+
+.gwt-PushButton-up-hovering {
+  background-color: #C3FFD9;
+  border: 2px solid transparent;
+  border-color: #E8FFF1 rgb(157, 174, 205) rgb(157, 174, 205) rgb(232, 241, 255);
+}
+
+.gwt-PushButton-down {
+  background-color: #C3FFD9;
+  border: 2px solid transparent;
+  border-color: #9DCDAE rgb(232, 241, 255) rgb(232, 241, 255) rgb(157, 174, 205);
+}
+
+.gwt-PushButton-down-hovering {
+  background-color: #C3FFD9;
+  border: 2px solid transparent;
+  border-color: #9DCDAE rgb(232, 241, 255) rgb(232, 241, 255) rgb(157, 174, 205);
+}
+
+.gwt-ToggleButton-up {
+  background-image: url(../../buttonbg.gif);
+  background-color: #E8FFF1;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white #a0a0a0 #a0a0a0 white;
+}
+
+.gwt-ToggleButton-up-hovering {
+  background-image: url(../../buttonhoverbg.gif);
+  background-color: #E8FFF1;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white black black white;
+}
+
+.gwt-ToggleButton-down {
+  background-image: url(../../buttonbg.gif);
+  background-color: #E8FFF1;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black white white black;
+}
+
+.gwt-ToggleButton-down-hovering {
+  background-image: url(../../buttonhoverbg.gif);
+  background-color: #E8FFF1;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black white white black;
+}
+
+.gwt-RichTextArea {
+  border: 1px solid #CFCFCF;
+  background-color: white;
+}
+
+.gwt-RichTextToolbar {
+  background-color: #C3FFD9;
+}
+
+.gwt-RichTextToolbar .gwt-PushButton-up {
+  border: 1px solid #CFCFCF;
+}
+
+.gwt-RichTextToolbar .gwt-PushButton-up-hovering {
+  border: 1px solid #CFCFCF;
+  border-color: #E8FFF1 rgb(157, 174, 205) rgb(157, 174, 205) rgb(232, 241, 255);
+}
+
+.gwt-RichTextToolbar .gwt-PushButton-down {
+  border: 1px solid #CFCFCF;
+  border-color: #9DCDAE rgb(232, 241, 255) rgb(232, 241, 255) rgb(157, 174, 205);
+}
+
+.gwt-RichTextToolbar .gwt-PushButton-down-hovering {
+  border: 1px solid #CFCFCF;
+  border-color: #9DCDAE rgb(232, 241, 255) rgb(232, 241, 255) rgb(157, 174, 205);
+}
+
+.gwt-RichTextToolbar .gwt-ToggleButton-up {
+  border: 1px solid #CFCFCF;
+}
+
+.gwt-RichTextToolbar .gwt-ToggleButton-up-hovering {
+  border: 1px solid #CFCFCF;
+  border-color: #E8FFF1 rgb(157, 174, 205) rgb(157, 174, 205) rgb(232, 241, 255);
+}
+
+.gwt-RichTextToolbar .gwt-ToggleButton-down {
+  background-color: #E8FFF1;
+  border: 1px solid #CFCFCF;
+  border-color: #9DCDAE rgb(232, 241, 255) rgb(232, 241, 255) rgb(157, 174, 205);
+}
+
+.gwt-RichTextToolbar .gwt-ToggleButton-down-hovering {
+  background-color: #E8FFF1;
+  border: 1px solid #CFCFCF;
+  border-color: #9DCDAE rgb(232, 241, 255) rgb(232, 241, 255) rgb(157, 174, 205);
+}
+
+.gwt-SuggestBoxPopup {
+  background-color: white;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  z-index: 10000;
+}
+
+.gwt-SuggestBoxPopup .item {
+  padding: 2px 2px 2px 2px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.gwt-SuggestBoxPopup .item-selected {
+  background-color: #d0d0d0;
+  border: 1px solid #d0d0d0;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.gwt-SliderBar-shell {
+  border: 2px solid #faf7f9;
+  border-right: 2px solid #848082;
+  border-bottom: 2px solid #848082;
+  background-color: #efe7eb;
+}
+
+.gwt-SliderBar-shell .gwt-SliderBar-line {
+  border: 1px solid black;
+  background-color: white;
+}
+
+.gwt-SliderBar-shell .gwt-SliderBar-tick {
+  background: black;
+}
+
+.gwt-SliderBar-shell .gwt-SliderBar-label {
+  font-size: 8pt;
+}
+
+.gwt-SliderBar-shell-focused {
+}
+
+.gwt-SliderBar-shell .gwt-SliderBar-line-sliding {
+  background-color: #DDDDDD;
+}
+
+.files-list-panel {
+  background: white;
+  border: 1px solid #abd9c9;
+}
+
+.files-toolbar {
+  border: 1px solid #abd9c9;
+  background-color: #fff;
+}
+
+.folder-list-panel {
+  border: 1px solid black;
+}
+
+.puc-navigator-panel {
+  background-color: #f1f1f1;
+  border-right: 1px solid #abd9c9;
+}
+
+.mantle-toolbar-combo-button-hovering {
+  background-color: #d0d0d0;
+  cursor: pointer;
+}
+
+.fileItemDragProxy {
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+  border: 1px dashed #999 !important;
+  background: transparent;
+}
+
+.leaf-widget {
+  /*font-size: 13px;*/
+}
+
+.leaf-widget .gwt-TreeItem > table {
+
+}
+
+.leaf-widget .gwt-TreeItem-selected > table {
+  background-color: #ebebeb;
+}
+
+.leaf-widget .leaf-widget-hidden .gwt-TreeItem > table {
+  width: 100%;
+  opacity: .7;
+  font-style: italic;
+  background-color: #ffffff;
+}
+
+.leaf-widget .leaf-widget-hidden .gwt-TreeItem-selected > table {
+  width: 100%;
+  opacity: .7;
+  font-style: italic;
+  background-color: #dbdbdb;
+}
+
+.gwt-MenuItem,
+.gwt-MenuItem-selected,
+.gwt-MenuItem-checkbox-unchecked,
+.gwt-MenuItem-checkbox-checked,
+.disabledMenuItem {
+}
+
+.disabledMenuItem {
+  color: #ccc;
+}
+
+/*
+ fix for toolbar buttons not supporting transparency in IE,
+ it is a known bug that once you apply any filter or -ms-filter via css, all pngs lose transparency
+ this "fixes" the problem
+ */
+.toolbar-button img {
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+}
+
+.files-toolbar .toolbar-button-hovering {
+  background-color: #d0d0d0;
+  border: 1px solid transparent;
+}
+
+/*========== Launch Page Styles ================= */
+#outterWrapper {
+  padding: 0px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.largeGraphicButton {
+  padding: 22px 0 8px 0px;
+}
+
+.largeGraphicSpacer {
+  background-image: url('images/seperator_vert.png');
+}
+
+.smallButton {
+  padding: 2px 0 30px 0px;
+}
+
+.newDsPanel {
+  padding: 10px 0px 10px 10px;
+}
+
+.bottomButtonWrapper {
+  padding: 20px 20px 0px 57px;
+}
+
+.launcher-bottom-text {
+  line-height: 1.5;
+  padding: 10px 20px 0px 40px;
+  font-size: 13px;
+  color: #FFF;
+  text-shadow: 0px 1px 1px #000;
+  text-align: left;
+"><div style=" font-size : 16 px;
+  color: #FFF;
+  text-shadow: 0px 1px 1px #000;
+  text-align: left
+}
+
+.schedulesPanel {
+  margin-top: -23px;
+}
+
+.schedulesPanel .toolbar {
+  background: none;
+  border: 0;
+}
+
+.schedulesPanel .pentaho-table th {
+  font-size: 16px;
+  border-spacing: 2px;
+  padding: 8px 10px 10px 10px;
+  font-weight: normal;
+}
+
+.custom-dropdown {
+  width: 254px;
+  cursor: hand;
+  cursor: pointer;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-bottom: 0px solid transparent;
+}
+
+.custom-dropdown-pressed {
+  border-top: 1px solid #cfcfcf;
+  border-right: 1px solid #cfcfcf;
+  border-left: 1px solid #cfcfcf;
+  box-shadow: 2px 0px 4px 0px #d0d0d0;
+  background-color: white;
+  z-index: 1000;
+  position: relative;
+  box-shadow: none;
+}
+
+.mantle-perspective-switcher .custom-dropdown-pressed,
+#pucUserDropDown .custom-dropdown-pressed {
+  -webkit-box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+  box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+  z-index: 100;
+}
+
+.custom-dropdown-label {
+  font-size: 28px;
+  color: #ccc;
+  padding-left: 6px;
+  font-family: OpenSansLight, Helvetica, Arial, Sans serif;
+}
+
+#pucUserDropDown {
+  float: right;
+  display: block;
+  margin-right: 20px;
+}
+
+#pucUserDropDown .custom-dropdown {
+  width: 105px;
+  min-width: 105px;
+  padding-top: 10px;
+}
+
+#pucUserDropDown .custom-dropdown-arrow {
+}
+
+#pucUserDropDown .custom-dropdown-label {
+  text-align: right;
+  font-size: 18px;
+}
+
+#pucUserDropDown .custom-dropdown-pressed .custom-dropdown-arrow {
+  
+}
+
+#pucUserDropDown .custom-dropdown-arrow .gwt-Label {
+  width: 30px;
+}
+
+#pucPerspectives .custom-dropdown {
+  width: 130px;
+  min-width: 130px;
+}
+
+#pucPerspectives .custom-dropdown-arrow {
+  width: 30px;
+  
+}
+
+.custom-dropdown-arrow:after{
+    content:'+';
+}
+
+#pucPerspectives .custom-dropdown-label {
+  text-align: left;
+}
+
+#pucPerspectives .custom-dropdown-pressed .custom-dropdown-arrow {
+  
+}
+
+#pucPerspectives .custom-dropdown-arrow .gwt-Label {
+  width: 40px;
+}
+
+.custom-dropdown-arrow:after{
+    content:'\0000a0\276F';
+}
+
+.custom-dropdown-arrow{
+    text-align: left;
+    color:#ccc;
+    font-size:inherit
+}
+
+#customDropdownPopupMinor  .gwt-MenuBar-vertical .gwt-MenuItem {
+  padding: 10px 30px 10px 0px;
+  text-align: right;
+}
+
+#pucPerspectives {
+  padding-left: 15px;
+  display: block;
+  float: left;
+}
+.custom-dropdown-arrow{
+    vertical-align: middle!important;
+}
+#pucMenuBar {
+  display: block;
+}
+
+#pucToolBar {
+  display: block;
+  float: left;
+  width: 380px;
+}
+
+#pucHeader {
+  /* moved to global crystal */
+  min-width: 820px;
+}
+
+#pucHeader .gwt-MenuBar-horizontal .gwt-MenuItem {
+  color: #ccc;
+  font-size: 13px;
+  padding: 4px 12px;
+  z-index: 100;
+  position: relative;
+}
+
+#pucContent {
+  /*  box-shadow: 0px 0px 1px 2px #a9ada2; */
+}
+
+.custom-dropdown-popup {
+  z-index: 300;
+  -webkit-box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+  -moz-box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+  box-shadow: 0 3px 3px rgba(50, 50, 50, 0.2);
+}
+
+.custom-dropdown-popup .gwt-MenuBar-vertical .gwt-MenuItem {
+  padding: 10px 0px 10px 10px;
+  width: 242px;
+  font-size: 16px;
+  color: #333;
+  font-family: OpenSansLight, Helvetica, Arial, Sans serif;
+}
+
+.custom-dropdown-selected,
+.custom-dropdown-selected:hover {
+  background-color: #e9e9e9 !important;
+  color: #333 !important;
+}
+
+.custom-dropdown-popup .gwt-MenuBar-vertical .gwt-MenuItem-disabled {
+  color: #cccccc;
+  cursor: default;
+}
+
+.custom-dropdown-popup .gwt-MenuBar-vertical .gwt-MenuItem-disabled:hover {
+  background-color: white;
+}
+
+.custom-dropdown-popup .gwt-MenuBar-vertical .gwt-MenuItem-selected {
+  background-color: #2d6e94 !important;
+  color: #333 !important;
+}
+
+.custom-dropdown-popup .gwt-MenuBar-vertical .gwt-MenuItem-selected:hover {
+  background-color: #2d6e94 !important;
+  color: #fff !important;
+}
+
+.custom-dropdown-popup .gwt-MenuBar-vertical .gwt-MenuItem-selected.custom-dropdown-selected,
+.custom-dropdown-popup .gwt-MenuBar-vertical .gwt-MenuItem-selected.custom-dropdown-selected:hover {
+  background-color: #2d6e94 !important;
+  color: #333333 !important;
+}
+
+.custom-dropdown-popup  .gwt-MenuBar-vertical {
+  padding: 10px 0px 0px 0px;
+  border-left: 1px solid #cfcfcf;
+  border-right: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+  border-top: 0px solid transparent;
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.custom-dropdown-arrow {
+}
+
+.custom-dropdown-pressed .custom-dropdown-arrow {
+  
+}
+
+#generated-content-location {
+  width: 360px;
+  height: 25px;
+}
+
+#schedule-name-input {
+  width: 360px;
+  height: 25px;
+}
+
+.schedule-dialog-button-panel {
+  padding-right: 3px;
+  padding-bottom: 2px;
+  width: 100%;
+}
+
+.gwt-MenuBar-horizontal .gwt-MenuItem-selected {
+  background-color: #2d6e94;
+  border: none;
+}
+
+.gwt-MenuBarPopup {
+  z-index: 99;
+  position: relative;
+  margin-left: -2px;
+}
+
+.gwt-MenuBar-vertical {
+  background-color: #ffffff;
+  margin-top: 0;
+  margin-left: 0;
+  border-top: 1px solid #CFCFCF;
+  border-right: 1px solid #CFCFCF;
+  border-bottom: 1px solid #CFCFCF;
+  border-left: 1px solid #CFCFCF;
+  padding: 0;
+  z-index: 100;
+  position: relative;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem {
+  color: #333333;
+  padding: 3px 20px 3px 20px;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem-checkbox-unchecked {
+  color: #333333;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem-checkbox-checked {
+  color: #333333;
+  background-image: none;
+}
+
+.gwt-MenuBar-vertical tr:hover .gwt-MenuItem-selected, 
+.gwt-MenuBar-vertical tr:hover .subMenuIcon-selected {
+    background-color: #2d6e94;
+    color: #FFF;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem-selected:hover {
+    background-color: #2d6e94;
+    color: #FFF;
+}
+
+.gwt-MenuBar-vertical .subMenuIcon-selected {
+    background-color: #C6C6C6;
+    color: #FFF;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem-selected {
+  background-color: #2d6e94;
+  color: #FFF;
+  vertical-align: bottom;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator {
+  padding: 0px;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  height: 5px;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator .menuSeparatorInner {
+  border-top: 1px solid #e9e9e9;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem-checkbox-checked-selected:hover {
+    background-color: #C6C6C6;
+    color: #FFF;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem-checkbox-unchecked-selected:hover {
+    background-color: #C6C6C6;
+    color: #FFF;
+}
+
+.gwt-MenuBar-horizontal .gwt-MenuItem-selected:hover {
+  background-color: #2d6e94;
+}
+
+.gwt-MenuBar-vertical .gwt-MenuItem-selected:hover {
+  background-color: #2d6e94;
+}
+
+td.subMenuIcon:after {
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid #333333;
+  border-right: none;
+  position: absolute;
+  content: '';
+  right: 10px;
+  width: 0;
+  height: 0;
+  margin-top: -3px;
+}
+td.subMenuIcon img {
+  display: none;
+}
+
+td.subMenuIcon-selected:after {
+  border-left: 4px solid #fff;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem-checkbox-checked:after {
+  left: 6px;
+  content: '✓';
+  position: absolute;
+  color: #333333;
+  font-family: OpenSansRegular, Arial, sans-serif;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem-checkbox-checked-selected:hover:after {
+  color: #fff;
+}
+
+/* == == == */
+#mainToolbar #openButton .toolbar-button IMG {
+  background: url('images/open_32_light.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #newButton .toolbar-button IMG {
+  background: url('images/new_32_light.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #editContentButton .toolbar-toggle-button IMG {
+  background: url('images/editContent_32.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #editContentButton .toolbar-toggle-button-disabled IMG {
+  background: url('images/editContent_32_disabled.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #saveButton .toolbar-button IMG {
+  background: url('images/save_32.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #saveButton .toolbar-button-disabled IMG {
+  background: url('images/save_32_disabled.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #saveAsButton .toolbar-button IMG {
+  background: url('images/saveAs_32.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #saveAsButton .toolbar-button-disabled IMG {
+  background: url('images/saveAs_32_disabled.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #showBrowserButton .toolbar-toggle-button IMG {
+  background: url('../../images/browser_hide_32.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #showBrowserButton .toolbar-toggle-button-down IMG {
+  background: url('../../images/browser_show_32.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #newAnalysisButton_img .gwt-Image {
+  background: url('images/dashbaord_32.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #printButton .toolbar-button IMG {
+  background: url('images/print_32.png');
+  height: 32px;
+  width: 32px;
+}
+
+#mainToolbar #printButton .toolbar-button-disabled IMG {
+  background: url('images/print_32_disabled.png');
+  height: 32px;
+  width: 32px;
+}
+
+/*****************************************/
+/*** Overrides for the schedules table ***/
+/*****************************************/
+.pentaho-table .cellTableWidget {
+  background-color: white;
+  font-size: 13px;
+  border-bottom: 1px solid #6f7772;
+}
+
+.pentaho-table .cellTableFirstColumn {
+
+}
+
+.pentaho-table .cellTableLastColumn {
+
+}
+
+.pentaho-table .cellTableFooter {
+  border-top: 2px solid #6f7772;
+  padding: 3px 15px;
+  text-align: left;
+  color: #4b4a4a;
+  text-shadow: #ddf 1px 1px 0;
+  overflow: hidden;
+}
+
+.pentaho-table .cellTableHeader {
+  padding: 3px 15px;
+  text-align: left;
+  color: white;
+  overflow: hidden;
+}
+
+.pentaho-table .cellTableCell {
+  padding: 10px 10px;
+  overflow: hidden;
+  text-align: left;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.pentaho-table .cellTableFirstColumnFooter {
+
+}
+
+.pentaho-table .cellTableFirstColumnHeader {
+
+}
+
+.pentaho-table .cellTableLastColumnFooter {
+
+}
+
+.pentaho-table .cellTableLastColumnHeader {
+
+}
+
+.pentaho-table .cellTableSortableHeader {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.pentaho-table .cellTableSortableHeader:hover {
+  background: #777;
+  color: #fff;
+}
+
+.pentaho-table .cellTableSortedHeaderAscending {
+
+}
+
+.pentaho-table .cellTableSortedHeaderDescending {
+
+}
+
+.pentaho-table .cellTableEvenRow {
+  background: #ffffff;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.pentaho-table .cellTableEvenRowCell {
+  border: 2px solid #ffffff;
+}
+
+.pentaho-table .cellTableOddRow {
+  background: #f5f5f5;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.pentaho-table .cellTableOddRowCell {
+  border: 2px solid #f5f5f5;
+}
+
+.pentaho-table .cellTableHoveredRow {
+  background: #C6C6C6;
+  color: #fff;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.pentaho-table .cellTableHoveredRowCell {
+  border: 2px solid #C6C6C6;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+  cursor: pointer;
+}
+
+.pentaho-table .cellTableKeyboardSelectedRow {
+  background: #e9e9e9;
+  color: #333;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.pentaho-table .cellTableKeyboardSelectedRowCell {
+  border: 2px solid #e9e9e9;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.pentaho-table .cellTableSelectedRow {
+  background: #e9e9e9;
+  color: #333333;
+  height: auto;
+  overflow: auto;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+.pentaho-table .cellTableSelectedRowCell {
+  border: 2px solid #e9e9e9;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+/**
+ * The keyboard selected cell is visible over selection.
+ */
+.pentaho-table .cellTableKeyboardSelectedCell {
+}
+
+.pentaho-table .cellTableLoading {
+  margin: 30px;
+}
+
+/*************************************/
+/*** END of schedules table styles ***/
+/*************************************/
+
+#admin-users-panel,
+#admin-roles-panel,
+#admin-system-roles-panel {
+  padding: 10px;
+}
+
+.users-roles-list {
+  height: 432px;
+  width: 200px;
+}
+
+.users-roles-selection-list {
+  height: 317px;
+  width: 200px;
+}
+
+#admin-roles-panel .users-roles-selection-list {
+  height: 268px;
+}
+
+#admin-system-roles-panel .pentaho-fieldgroup-minor .gwt-Label {
+  height: 26px;
+}
+
+.alignleft {
+  left: 3px !important;
+}
+
+.newToolbarDropdown {
+  border: 1px solid #8bc5b5;
+  border: 1px solid rgba(139, 181, 197, 0.2);
+  background-color: #ebebeb;
+
+  /* Standard form */
+  border-radius: 6px;
+  /* Firefox */
+  -moz-border-radius: 6px;
+  /* Safari/Chrome */
+  -webkit-border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  z-index: 2;
+}
+
+.newToolbarDropdownButton {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0;
+}
+
+.mainToolbar-Wrapper .toolbar-button {
+  width: 38px;
+  height: 38px;
+  position: relative;
+}
+
+.mainToolbar-Wrapper .toolbar-toggle-button-disabled,
+.mainToolbar-Wrapper .toolbar-button-disabled {
+  width: 38px;
+  height: 38px;
+  position: relative;
+  opacity: 0.4;
+}
+
+.mainToolbar-Wrapper .toolbar-button img,
+.mainToolbar-Wrapper .toolbar-toggle-button img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -16px;
+  margin-left: -16px;
+}

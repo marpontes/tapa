@@ -121,10 +121,11 @@
 %>
 
 <meta name="gwt:property" content="locale=<%=ESAPI.encoder().encodeForHTMLAttribute(request.getLocale().toString())%>">
-    
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300' rel='stylesheet' type='text/css'>
+
+<script src="/pentaho-style/tapa/chesf/js/jquery-1.11.1.min.js"></script>    
+<link rel="stylesheet" href="/pentaho-style/tapa/_bootstrap/css/bootstrap.min.css">
+<script src="/pentaho-style/tapa/_bootstrap/js/bootstrap.min.js"></script>
+<link href='/pentaho-style/tapa/chesf/css/oxygen.css' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="/pentaho-style/tapa/chesf/css/styles.css">
     
 </head>
