@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="bootstrap">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{{ TAPA_TITLE }}</title>
+  <meta name="gwt:property" content="locale={{ TAPA_LOCALE }}">
+
+  <script src="content/tapa/resources/templates/tapa-default/assets/js/jquery-1.11.1.min.js"></script>    
+  <script src="content/tapa/resources/templates/tapa-default/assets/_bootstrap/js/bootstrap.min.js"></script>
+  <link href="content/tapa/resources/templates/tapa-default/assets/_bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="content/tapa/resources/templates/tapa-default/assets/css/oxygen.css" rel="stylesheet" type="text/css">
+  <link href="content/tapa/resources/templates/tapa-default/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+  <div id="fullscreen_bg" class="fullscreen_bg"/>
+  <div class="header">
+    Portal de Business Intelligence
+  </div>
+  <div class="container">
+    <div class="form-wrapper">
+      <form class="form-signin" action="j_spring_security_check" method="post">
+        <h3><span class="glyphicon glyphicon-lock"></span> Log in</h3>
+        <hr>
+        Por favor informe suas credenciais
+        <input name="j_username" autocomplete="off" type="text" class="form-control" placeholder="Usu&aacute;rio" required="" autofocus="">
+        <input name="j_password" type="password" class="form-control" placeholder="Senha" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+          Login
+        </button>
+      </form>
+    </div>
+
+  </div>
+  <div class="footer gradient">
+    <div class="pull-left">
+      Baseado em
+    </div>
+    <div class="pull-right">
+      Trazido at&eacute; voc&ecirc; por
+    </div>
+    <hr>
+    <div class="clearfix"></div>
+    <div class="company-logo pull-left logo-pentaho"></div>
+    <div class="company-logo pull-right logo-oncase"></div>
+  </div>
+</body>
+</html>

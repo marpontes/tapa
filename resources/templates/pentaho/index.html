@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="bootstrap">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{{ TAPA_TITLE }}</title>
+<meta name="gwt:property" content="locale={{ TAPA_LOCALE }}">
+<link rel="shortcut icon" href="/pentaho-style/favicon.ico" />
+
+<style type="text/css">
+  #login-background,
+  #loginError.pentaho-dialog,
+  #systemDown.pentaho-dialog,
+  #login-footer {
+    display: none;
+  }
+</style>
+
+<script language="javascript" type="text/javascript" src="webcontext.js"></script>
+
+</head>
+
+<body class="pentaho-page-background">
+<div id="login-wrapper">
+  <div id="login-background">
+    <div id="login-logo"></div>
+
+    <div id="login-form-container">
+      <div id="animate-wrapper">
+        <h1>{{ TAPA_LOGIN_TITLE }}</h1>
+        <form name="login" id="login" action="j_spring_security_check" method="POST" onkeyup="if(window.event && window.event.keyCode && window.event.keyCode==13){var buttonToClick = document.getElementById('loginbtn'); if(buttonToClick){ buttonToClick.click();}}">
+          <div class="row-fluid nowrap">
+            <div class="input-container">
+              <label>{{ TAPA_USERNAME }}</label>
+              <input id="j_username" name="j_username" type="text" placeholder="" autocomplete="off">
+            </div>
+            <div class="input-container">
+              <label>{{ TAPA_PASSWORD }}</label>
+              <input id="j_password" name="j_password" type="password" placeholder="" autocomplete="off">
+            </div>
+            <div class="input-container">
+              <label>&nbsp;</label>
+              <button type="submit" id="loginbtn" class="btn">{{ TAPA_LOGIN }}</button>
+              <input type="hidden" name="locale" value="en_US">
+            </div>
+          </div>
+          <div id="eval-users-toggle-container">
+
+            {% if TAPA_SHOWUSERS == true %}
+
+            <div id="eval-users-toggle" onClick="toggleEvalPanel()">
+              <div>{{ TAPA_EVAL_LOGIN }}</div>
+                <div id="eval-arrow" class="closed"></div>
+            </div>
+
+           {% endif %} 
+
+           &nbsp;
+          </div>
+        </form>
+      </div>
+
+      <div class="row-fluid">
+        <div id="evaluationPanel" class="span10 row-fluid">
+          <div id="role-admin-panel" class="span6 well">
+            <div class="login-role">{{ TAPA_ADMIN_USER }}</div>
+            <div class="row-fluid">
+              <div class="span6 login-label">{{ TAPA_USERNAME }}</div>
+              <div class="span6 login-value">Admin</div>
+            </div>
+            <div class="row-fluid">
+              <div class="span6 login-label">{{ TAPA_PASSWORD }}</div>
+              <div class="span6 login-value">password</div>
+            </div>
+            <button class="btn" onClick="loginAs('Admin', 'password');">{{ TAPA_GO }}</button>
+          </div>
+          <div id="role-business-user-panel" class="span6 well ">
+            <div class="login-role">{{ TAPA_BUSINESS_USER }}</div>
+            <div class="row-fluid">
+              <div class="span6 login-label">{{ TAPA_USERNAME }}</div>
+              <div class="span6 login-value">Admin</div>
+            </div>
+            <div class="row-fluid">
+              <div class="span6 login-label">{{ TAPA_PASSWORD }}</div>
+              <div class="span6 login-value">password</div>
+            </div>
+            <button class="btn" onClick="loginAs('Suzy', 'password');">{{ TAPA_GO }}</button>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+  <div id="login-footer-wrapper">
+    <div id="login-footer" class="beforeSlide">{{ TAPA_COPYRIGHT | raw }}</div>
+  </div>
+</div>
+
+<div id="loginError" class="pentaho-dialog">
+  <div class="dialogTopCenterInner">
+    <div class="Caption">
+      {{ TAPA_ERROR_CAPTION | raw }}
+    </div>
+  </div>
+  <div class="dialogMiddleCenterInner">
+    <div class="dialog-content pentaho-padding-sm">
+      {{ TAPA_LOGIN_ERROR | raw }}
+    </div>
+  </div>
+  <div class="dialogMBottomCenterInner">
+    <div class="button-panel">
+      <button class="btn pull-right" onclick="document.getElementById('loginError').style.display='none'">{{ TAPA_LOGIN_OK }}</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  {% if TAPA_SHOWUSERS == true %}
+
+  function toggleEvalPanel() {
+    var evaluationPanel = $("#evaluationPanel");
+    evaluationPanel.toggleClass("afterSlide");
+    $("#eval-arrow").toggleClass("closed");
+  }
+
+  {% endif %} 
+
+  
+  function bounceToReturnLocation() {
+    // pass
+    var locale = document.login.locale.value;
+
+    var returnLocation = '{{ TAPA_REQUESTED_URL }}';
+    
+
+    if (returnLocation != '' && returnLocation != null) {
+      window.location.href = returnLocation;
+    } else {
+      window.location.href = window.location.href.replace("Login", "Home") + "?locale=" + locale;
+    }
+
+  }
+
+  function doLogin() {
+
+    // if we have a valid session and we attempt to login on top of it, the server
+    // will actually log us out and will not log in with the supplied credentials, you must
+    // login again. So instead, if they're already logged in, we bounce out of here to
+    // prevent confusion.
+    if ({{ TAPA_LOGGEDIN }}) {
+      bounceToReturnLocation();
+      return false;
+    }
+
+    jQuery.ajax({
+      type: "POST",
+      url: "j_spring_security_check",
+      dataType: "text",
+      data: $("#login").serialize(),
+
+      error:function (xhr, ajaxOptions, thrownError){
+        if (xhr.status == 404) {
+          // if we get a 404 it means login was successful but intended resource does not exist
+          // just let it go - let the user get the 404
+          bounceToReturnLocation();
+          return;
+        }
+        //Fix for BISERVER-7525
+        //parsereerror caused by attempting to serve a complex document like a prd report in any presentation format like a .ppt
+        //does not necesarly mean that there was a failure in the login process, status is 200 so just let it serve the archive to the web browser.
+        if (xhr.status == 200 && thrownError == 'parsererror') {
+          document.getElementById("j_password").value = "";
+          bounceToReturnLocation();
+          return;
+        }
+        // fail
+        $("#loginError").show();
+        $("#loginError button").focus();
+      },
+
+      success:function(data, textStatus, jqXHR){
+        if (data.indexOf("j_spring_security_check") != -1) {
+          // fail
+          $("#loginError").show();
+          $("#loginError button").focus();
+          return false;
+        } else {
+          document.getElementById("j_password").value = "";
+          bounceToReturnLocation();
+        }
+      }
+    });
+    return false;
+  }
+
+  function loginAs (username, password) {
+    $("#j_username").attr("value", username);
+    $("#j_password").attr("value", password);
+    doLogin();
+  }
+
+  $(document).ready(function(){
+    $("#login").submit(doLogin);
+
+    if ({{ TAPA_LOGGEDIN }}) {
+      bounceToReturnLocation();
+    }
+
+
+    $("#login-background").fadeIn(1000, function() {
+      $("#login-logo").addClass("afterSlide");
+
+      $("#animate-wrapper").addClass("afterSlide");
+      $("#j_username").focus();
+
+      $("#login-footer").addClass("afterSlide");
+
+    });
+
+
+  });
+</script>
+</body>
+</html>

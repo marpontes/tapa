@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>template</name>
+  <name>copyFilesToWebapps</name>
     <description>Clean Job</description>
     <extended_description/>
     <job_version/>
@@ -20,11 +20,6 @@
             <name>&#x23;cpk.cache.timeToLiveSeconds</name>
             <default_value>3600</default_value>
             <description>For how many seconds a result will be cached. Setting this value to 0 means the result will be cached forever. Remove &#x27;&#x23;&#x27; to use variable.</description>
-        </parameter>
-        <parameter>
-            <name>&#x23;cpk.executeAtStart</name>
-            <default_value>false</default_value>
-            <description>Whether the transformation is to be executed when the plugin is initialized. Remove &#x27;&#x23;&#x27; to use variable.</description>
         </parameter>
         <parameter>
             <name>&#x23;cpk.plugin.id</name>
@@ -75,6 +70,11 @@
             <name>&#x23;cpk.solution.system.dir</name>
             <default_value/>
             <description>The pentaho-solutions folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
+        </parameter>
+        <parameter>
+            <name>cpk.executeAtStart</name>
+            <default_value>true</default_value>
+            <description>Whether the transformation is to be executed when the plugin is initialized. Remove &#x27;&#x23;&#x27; to use variable.</description>
         </parameter>
         <parameter>
             <name>cpk.plugin.dir</name>
@@ -290,8 +290,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
-      <yloc>352</yloc>
+      <xloc>176</xloc>
+      <yloc>512</yloc>
       </entry>
     <entry>
       <name>sees if login jsp exists</name>
@@ -301,11 +301,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>592</xloc>
-      <yloc>128</yloc>
+      <xloc>176</xloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
-      <name>paths jsp and assetes</name>
+      <name>jsp paths</name>
       <description/>
       <type>SET_VARIABLES</type>
       <replacevars>Y</replacevars>
@@ -318,35 +318,15 @@
           <variable_type>ROOT_JOB</variable_type>
         </field>
         <field>
-          <variable_name>tapa_assets_path</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;..&#x2f;pentaho-style&#x2f;tapa</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
           <variable_name>jsp_install_path</variable_name>
           <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;install&#x2f;jsp</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
-          <variable_name>tapa_assets_install_path</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;install&#x2f;pentaho-style&#x2f;tapa</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
-          <variable_name>mantle_path</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;&#x2f;mantle</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
-          <variable_name>mantle_install_path</variable_name>
-          <variable_value>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;install&#x2f;mantle</variable_value>
           <variable_type>ROOT_JOB</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>176</xloc>
       <yloc>32</yloc>
       </entry>
     <entry>
@@ -371,8 +351,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>240</yloc>
+      <xloc>432</xloc>
+      <yloc>384</yloc>
       </entry>
     <entry>
       <name>rename original puc login</name>
@@ -386,7 +366,7 @@
       <create_destination_folder>N</create_destination_folder>
       <add_date>N</add_date>
       <add_time>N</add_time>
-      <SpecifyFormat>Y</SpecifyFormat>
+      <SpecifyFormat>N</SpecifyFormat>
       <date_time_format>yyyyMMddHHmmss</date_time_format>
       <nr_errors_less_than>10</nr_errors_less_than>
       <success_condition>success_if_no_errors</success_condition>
@@ -412,52 +392,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>128</yloc>
+      <xloc>432</xloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
-      <name>Copy Files</name>
-      <description/>
-      <type>COPY_FILES</type>
-      <copy_empty_folders>Y</copy_empty_folders>
-      <arg_from_previous>N</arg_from_previous>
-      <overwrite_files>Y</overwrite_files>
-      <include_subfolders>Y</include_subfolders>
-      <remove_source_files>N</remove_source_files>
-      <add_result_filesname>N</add_result_filesname>
-      <destination_is_a_file>N</destination_is_a_file>
-      <create_destination_folder>Y</create_destination_folder>
-      <fields>
-        <field>
-          <source_filefolder>&#x24;&#x7b;tapa_assets_install_path&#x7d;</source_filefolder>
-          <destination_filefolder>&#x24;&#x7b;tapa_assets_path&#x7d;</destination_filefolder>
-          <wildcard>.&#x2a;</wildcard>
-        </field>
-        <field>
-          <source_filefolder>&#x24;&#x7b;mantle_install_path&#x7d;</source_filefolder>
-          <destination_filefolder>&#x24;&#x7b;mantle_path&#x7d;</destination_filefolder>
-          <wildcard>.&#x2a;</wildcard>
-        </field>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>480</yloc>
-      </entry>
-    <entry>
-      <name>Checks if assets folder exists</name>
-      <description/>
-      <type>FILE_EXISTS</type>
-      <filename>&#x24;&#x7b;tapa_assets_path&#x7d;</filename>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>464</xloc>
-      <yloc>336</yloc>
-      </entry>
-    <entry>
-      <name>rename original puc login 2</name>
+      <name>tries to restore original</name>
       <description/>
       <type>MOVE_FILES</type>
       <move_empty_folders>N</move_empty_folders>
@@ -474,7 +413,7 @@
       <success_condition>success_if_no_errors</success_condition>
       <AddDateBeforeExtension>N</AddDateBeforeExtension>
       <DoNotKeepFolderStructure>N</DoNotKeepFolderStructure>
-      <iffileexists>do_nothing</iffileexists>
+      <iffileexists>overwrite_file</iffileexists>
       <destinationFolder/>
       <ifmovedfileexists>do_nothing</ifmovedfileexists>
       <moved_date_time_format/>
@@ -494,14 +433,105 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>240</yloc>
+      <xloc>656</xloc>
+      <yloc>512</yloc>
+      </entry>
+    <entry>
+      <name>backup</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Making a backup copy of PUCLogin.jsp with the name &#x22;PUCLogin.jsp.ORIGINAL&#x22;</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject>&#x5b;Tapa Plugin&#x5d;</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>304</xloc>
+      <yloc>208</yloc>
+      </entry>
+    <entry>
+      <name>checking</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Checking if PUCLogin.jsp is backed up</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject>&#x5b;Tapa Plugin&#x5d;</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>176</xloc>
+      <yloc>112</yloc>
+      </entry>
+    <entry>
+      <name>install</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Installing our version of PUCLogin.jsp into your webapp</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject>&#x5b;Tapa Plugin&#x5d;</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>432</xloc>
+      <yloc>288</yloc>
+      </entry>
+    <entry>
+      <name>restore-ok</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Your PUCLogin.jsp was successfully restored</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject>&#x5b;Tapa Plugin&#x5d;</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>432</xloc>
+      <yloc>512</yloc>
+      </entry>
+    <entry>
+      <name>backup 2</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Your biserver was already tapa-enabled</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject>&#x5b;Tapa Plugin&#x5d;</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>176</xloc>
+      <yloc>352</yloc>
+      </entry>
+    <entry>
+      <name>something-wrong</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Something went wrong when trying to install our copy of PUCLogin. Trying to rollback to your original PUCLogin.jsp</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject>&#x5b;Tapa Plugin&#x5d;</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>384</yloc>
+      </entry>
+    <entry>
+      <name>success&#x21;</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>Your BAServer was successfully patched to use Tapa Plugin</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject>&#x5b;Tapa Plugin&#x5d;</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>336</xloc>
+      <yloc>432</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
       <from>START</from>
-      <to>paths jsp and assetes</to>
+      <to>jsp paths</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -510,7 +540,7 @@
     </hop>
     <hop>
       <from>sees if login jsp exists</from>
-      <to>rename original puc login</to>
+      <to>backup</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -518,53 +548,71 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>backup</from>
+      <to>rename original puc login</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>jsp paths</from>
+      <to>checking</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>checking</from>
+      <to>sees if login jsp exists</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
       <from>rename original puc login</from>
+      <to>install</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>install</from>
       <to>install jspfiles</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>install jspfiles</from>
-      <to>Checks if assets folder exists</to>
+      <from>tries to restore original</from>
+      <to>restore-ok</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Checks if assets folder exists</from>
-      <to>Copy Files</to>
+      <from>restore-ok</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Checks if assets folder exists</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Copy Files</from>
-      <to>Success</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>sees if login jsp exists</from>
-      <to>Checks if assets folder exists</to>
+      <to>backup 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -572,8 +620,17 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>backup 2</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
       <from>install jspfiles</from>
-      <to>rename original puc login 2</to>
+      <to>something-wrong</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -581,55 +638,34 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>paths jsp and assetes</from>
-      <to>sees if login jsp exists</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>paths jsp and assetes</from>
-      <to>rename original puc login</to>
+      <from>something-wrong</from>
+      <to>tries to restore original</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>install jspfiles</from>
-      <to>Copy Files</to>
+      <to>success&#x21;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>success&#x21;</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
   </hops>
   <notepads>
-    <notepad>
-      <note>a &#x2a;punchthrough&#x2a; method is implemented.&#xa;&#xa;Whenever this endpoint is called it&#x27;s going to push&#xa;all the files from the plugin structure to the webapp.</note>
-      <xloc>464</xloc>
-      <yloc>16</yloc>
-      <width>342</width>
-      <heigth>74</heigth>
-      <fontname/>
-      <fontsize>-1</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
 <attributes><group><name>JobRestart</name>
 <attribute><key>UniqueConnections</key>
