@@ -1,0 +1,11 @@
+/* PUC Logo style */
+#tapaLogo {
+  width: 140px;
+  height: 42px;
+  float: right;
+  background-image:url(../img/logo.png);
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:100% auto;
+  margin-right:10px;
+}

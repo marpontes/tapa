@@ -1,0 +1,14 @@
+{
+    "externalResources": [
+        {
+            "type": "js",
+            "context": "mantle",
+            "url": "assets/js/mantle-context.js"
+        },
+        {
+            "type": "css",
+            "context": "mantle",
+            "url": "assets/css/mantle-context.css"
+        }
+    ]
+}

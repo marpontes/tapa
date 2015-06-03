@@ -28,4 +28,7 @@
 	<menu-items>
 		<!--<menu-item id="tapa_main" anchor="tools-submenu" label="Tapa" command="content/tapa/" type="MENU_ITEM" how="LAST_CHILD"/>-->
 	</menu-items>
+    <external-resources resourcebundle="content/tapa/resources/config">
+      <file context="mantle">content/tapa/resources/templates/external-resources.js</file>
+    </external-resources>
 </plugin>
