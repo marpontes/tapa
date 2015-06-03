@@ -189,7 +189,6 @@
     Tapa Plugin : Variables
     -------------------------------- */
 
-  String sysPath = PentahoSystem.getApplicationContext().getSolutionPath("");
   IPluginManager plugMan = PentahoSystem.get(IPluginManager.class, PentahoSessionHolder.getSession());
   Object generatedTemplate = null;
 
@@ -220,15 +219,11 @@
     -------------------------------- */
 
   try{
- 
-    Object currentTemplateName = plugMan.getPluginSetting("tapa", "tapa-current-template-name", "pentaho");
     
     Object tapaFactory = plugMan.getBean("tapaTemplateFactory");
-    Method templateGetter = tapaFactory.getClass().getMethod("getTemplate", String.class, Map.class);
+    Method templateGetter = tapaFactory.getClass().getMethod("getTemplate", Map.class);
 
-    generatedTemplate = templateGetter.invoke(tapaFactory, currentTemplateName.toString(), tapaContext);
-
-    
+    generatedTemplate = templateGetter.invoke(tapaFactory, tapaContext);
 
   }catch(Exception e){
 
