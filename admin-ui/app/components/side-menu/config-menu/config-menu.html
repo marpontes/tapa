@@ -1,0 +1,42 @@
+	<div class="tapa-side-menu-content" ng-init="configCtrl.loadConfigControls()">
+        <header>
+        	Configuration
+        	<md-button class="pull-right tapa-menu tapa-icon md-icon-button md-primary" ng-click="disposeMenu()" aria-label="Settings">
+          		<md-icon md-svg-icon="assets/img/arrow_forward_black.svg"></md-icon>
+        	</md-button>
+        	<!--<i class="material-icons" ng-click="disposeMenu()">arrow_back</i>-->
+        </header>
+
+        <!--error-message-->
+        <div ng-show="configCtrl.errorLoading" layout="row" layout-align="center center">
+        	<md-subheader class="md-no-sticky">Error loading configuration </md-subheader>
+        </div>
+
+        <!--loading animation-->
+        <div ng-hide="configCtrl.dataLoaded" layout="row" layout-align="center center">
+        	<md-progress-circular md-mode="indeterminate" ></md-progress-circular>
+        </div>
+
+        <!--controls-->
+		<md-list class="listdemoListControls" ng-show="configCtrl.dataLoaded">
+
+		  <md-subheader class="md-no-sticky">Plugin configuration </md-subheader>
+		  <md-list-item ng-enabled="configCtrl.enablePluginSwitch">
+		    <i class="tapa-list-icon material-icons">assignment_turned_in</i>
+		    <p> Plugin enabled</p>
+		    <md-switch ng-change="configCtrl.toggleEnablePlugin($event)" ng-enabled="configCtrl.enablePluginSwitch" class="md-primary" ng-model="configCtrl.pluginEnabled"></md-switch>
+		  </md-list-item>
+		  <md-list-item ng-enabled="configCtrl.enableSplashSwitch">
+		    <i class="tapa-list-icon material-icons">new_releases</i>
+		    <p> Show Splash Screen</p>
+		    <md-switch ng-change="configCtrl.toggleShowSplashScreen($event)" ng-enabled="configCtrl.enableSplashSwitch" class="md-primary" ng-model="configCtrl.showSplashScreen"></md-switch>
+		  </md-list-item>
+
+		</md-list>
+		<div ng-if="configCtrl.alertMessage">
+			<br/>
+			<b layout="row" layout-align="center center" class="md-padding">
+			  {{configCtrl.alertMessage}}
+			</b>
+		</div>
+	</div>

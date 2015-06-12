@@ -3,7 +3,7 @@
 <overlays>
 		<overlay id="startup.tapa" resourcebundle="content/tapa/resources/lang/messages">
 			<menubar id="toolsmenu">
-	        	<menuitem id="tapa" label="${Launcher.tapa}" command="mantleXulHandler.openUrl('${Launcher.tapa}','${Launcher.tapa_TOOLTIP}','plugin/tapa/api/default')"/>
+	        	<!--<menuitem id="tapa" label="${Launcher.tapa}" command="mantleXulHandler.openUrl('${Launcher.tapa}','${Launcher.tapa_TOOLTIP}','content/tapa/admin-ui/index.html')"/>-->
 	      	</menubar>
 	    </overlay>
 	</overlays>
@@ -11,6 +11,7 @@
 	<static-paths>
 		<static-path url="/tapa/static" localFolder="static"/>
 		<static-path url="/tapa/resources" localFolder="resources"/>
+		<static-path url="/tapa/admin-ui" localFolder="admin-ui"/>
 	</static-paths>
 	<content-types>
 		<content-type>
@@ -31,4 +32,10 @@
     <external-resources resourcebundle="content/tapa/resources/config">
       <file context="mantle">content/tapa/resources/templates/external-resources.js</file>
     </external-resources>
+
+	<perspective id="tapa.perspective" title="${title}" layout-priority="-1"
+               resourcebundle="content/tapa/resources/lang/messages" content-url="content/tapa/admin-ui/index.html"
+               required-security-action="org.pentaho.security.administerSecurity">
+	</perspective>
+
 </plugin>

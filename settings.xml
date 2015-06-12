@@ -9,4 +9,5 @@
 	  <path>system/tapa/resources/components</path>
 	  <path>tapa/components</path>
 	</cde-components>
+	<tapa-confirm-comment><![CDATA[<!--TAPA_GENERATED-->]]></tapa-confirm-comment>
 </settings>
