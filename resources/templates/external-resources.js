@@ -14,7 +14,10 @@
 		and loads template-config.json within to inject the 
 		"externalResources" when on mantle context.
 	*/
-	$.getJSON( templatesPath+"/config.json",  function(config){
+	$.getJSON( CONTEXT_PATH+"plugin/tapa/api/getconfig",  function(config){
+
+		if (config["pluginEnabled"] !== true)
+			return;
 
 		var template = config.currentTemplate;
 		var templatePath = templatesPath + "/" + template;
