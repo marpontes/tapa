@@ -1,15 +1,47 @@
-{   
-    "thumbnailImageUrl" : "assets/img/nagem-screenshot.jpg",
-    "externalResources": [
-        {
-            "type": "js",
-            "context": "mantle",
-            "url": "assets/js/mantle-context.js"
-        },
-        {
-            "type": "css",
-            "context": "mantle",
-            "url": "assets/css/mantle-context.css"
-        }
-    ]
+{  
+   "thumbnailImageUrl" : "assets/img/nagem-screenshot.jpg",
+   "externalResources" : [  
+      {  
+         "type" : "js",
+         "context" : "mantle",
+         "url" : "assets/js/mantle-context.js"
+      },
+      {  
+         "type" : "css",
+         "context" : "mantle",
+         "url" : "assets/css/mantle-context.css"
+      }
+   ],
+   "textTags" : [  
+      {  
+         "tag" : "STATIC_RIGHT_HEADER_TEXT",
+         "type" : "html",
+         "value" : "Business Intelligence Portal"
+      },
+      {  
+         "tag" : "STATIC_LOGIN_TEXT",
+         "type" : "html",
+         "value" : "Please enter your credentials"
+      },
+      {  
+         "tag" : "STATIC_USERNAME_PLACEHOLDER",
+         "type" : "html",
+         "value" : "Username"
+      },
+      {  
+         "tag" : "STATIC_PASSWORD_PLACEHOLDER",
+         "type" : "html",
+         "value" : "Password"
+      },
+      {  
+         "tag" : "STATIC_BASED_TEXT",
+         "type" : "html",
+         "value" : "Based on"
+      },
+      {  
+         "tag" : "STATIC_BROUGHT_BY_TEXT",
+         "type" : "html",
+         "value" : "Brought to you by"
+      }
+   ]
 }
