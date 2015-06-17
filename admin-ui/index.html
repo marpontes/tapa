@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="tapa">
+<html ng-app="tapa" ng-keydown="keyDownMethod($event)">
   <head>
     <title>tapa</title>
     <meta name="viewport" content="initial-scale = 0.75,maximum-scale = 0.75" />
@@ -52,7 +52,7 @@
     <tapa-footer></tapa-footer>
     <splash-screen></splash-screen>
     <side-menu></side-menu>
-    <div ng-class="olClasses"></div>
+    <div ng-class="olClasses" ng-click="closeCallback()" ></div>
   </body>
     <script src="assets/js/angular.min.js"></script>
 

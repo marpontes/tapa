@@ -17,7 +17,7 @@
         var menuSide = null;
 
         $scope.showMenu = function(side){
-          overlayService.showOverlay();
+          overlayService.showOverlay($scope.disposeMenu);
           $(".tapa-side-menu.tapa-side-menu-"+side).removeClass('tapa-side-menu-hidden');
         };
 

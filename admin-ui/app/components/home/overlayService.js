@@ -24,17 +24,24 @@
     }
 
   	return {
-  		showOverlay : function(){
-			_addClass(lockedBodyClass,$rootScope.bodyClasses);
-			_removeClass(olHiddenClass,$rootScope.olClasses);
+  		showOverlay : function(callback){
+  			_addClass(lockedBodyClass,$rootScope.bodyClasses);
+  			_removeClass(olHiddenClass,$rootScope.olClasses);
+        $rootScope.closeCallback = callback;
+        $rootScope.keyDownMethod = function($event){
+          
+            if ($event.keyCode == 27){
+              $rootScope.closeCallback()
+            }
+
+        }
     	},
     	hideOverlay : function(){
-			_removeClass(lockedBodyClass,$rootScope.bodyClasses);
-			_addClass(olHiddenClass,$rootScope.olClasses);
+  			_removeClass(lockedBodyClass,$rootScope.bodyClasses);
+  			_addClass(olHiddenClass,$rootScope.olClasses);
 	    }
 
   	};
-  	return {};
   }]);
 
 })();
