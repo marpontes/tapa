@@ -17,8 +17,17 @@
     <!--  Content Generator  -->
     <!-- <bean id="cpk" class="pt.webdetails.cpk.CpkContentGenerator" scope="prototype"/> -->
 
-    <bean class="com.oncase.tapa.engine.security.AssetsExposerProcessor" /> 
-
+    <bean class="oncas.biserver.security.helper.URLExposer">
+      <property name="filterChainUrlPattern" value="/content/tapa/resources/templates/*/assets/**" />
+      <property name="interceptorDefifnintion">
+        <value>
+          <![CDATA[
+CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+\A/content/tapa/resources/templates/([\w\-\_]+)/assets/.*\Z=Anonymous,Authenticated
+\A/.*\Z=Authenticated]]>
+        </value>
+      </property>
+    </bean>
 
     <bean class="org.pentaho.platform.engine.core.system.objfac.spring.ApplicationContextPentahoSystemRegisterer" scope="singleton"/>
     <bean id="tapaTemplateFactory" class="com.oncase.tapa.engine.TapaTemplateFactory">
