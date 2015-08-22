@@ -16,16 +16,17 @@
 <body>
   <div id="fullscreen_bg" class="fullscreen_bg"/>
   <div class="header">
-    Portal de Business Intelligence
+    {{ STATIC_RIGHT_HEADER_TEXT }}
   </div>
   <div class="container">
     <div class="form-wrapper">
       <form class="form-signin" action="j_spring_security_check" method="post">
         <h3><span class="glyphicon glyphicon-lock"></span> Log in</h3>
         <hr>
-        Por favor informe suas credenciais
-        <input name="j_username" autocomplete="off" type="text" class="form-control" placeholder="Usu&aacute;rio" required="" autofocus="">
-        <input name="j_password" type="password" class="form-control" placeholder="Senha" required="">
+        {{ STATIC_LOGIN_TEXT }}
+        <br />
+        <input name="j_username" autocomplete="off" type="text" class="form-control" placeholder="{{ STATIC_USERNAME_PLACEHOLDER }}" required="" autofocus="">
+        <input name="j_password" type="password" class="form-control" placeholder="{{ STATIC_PASSWORD_PLACEHOLDER }}" required="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">
           Login
         </button>
@@ -35,10 +36,10 @@
   </div>
   <div class="footer gradient">
     <div class="pull-left">
-      Baseado em
+      {{ STATIC_BASED_TEXT }}
     </div>
     <div class="pull-right">
-      Trazido at&eacute; voc&ecirc; por
+      {{ STATIC_BROUGHT_BY_TEXT }}
     </div>
     <hr>
     <div class="clearfix"></div>
