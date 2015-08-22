@@ -14,7 +14,8 @@
 </head>
 
 <body>
-  <div id="fullscreen_bg" class="fullscreen_bg"/>
+  <script language="javascript">if( {{TAPA_LOGGEDIN}} ) location.href="/"</script>
+  <div id="fullscreen_bg" class="fullscreen_bg"></div>
   <div class="header">
     {{ STATIC_RIGHT_HEADER_TEXT }}
   </div>
@@ -23,16 +24,15 @@
       <form class="form-signin" action="j_spring_security_check" method="post">
         <h3><span class="glyphicon glyphicon-lock"></span> Log in</h3>
         <hr>
-        {{ STATIC_LOGIN_TEXT }}
+        <span>{{ STATIC_LOGIN_TEXT }}</span>
         <br />
-        <input name="j_username" autocomplete="off" type="text" class="form-control" placeholder="{{ STATIC_USERNAME_PLACEHOLDER }}" required="" autofocus="">
-        <input name="j_password" type="password" class="form-control" placeholder="{{ STATIC_PASSWORD_PLACEHOLDER }}" required="">
+        <input name="j_username" type="text" class="form-control" placeholder="{{ STATIC_USERNAME_PLACEHOLDER }}" required="" autofocus="" />
+        <input name="j_password" type="password" class="form-control" placeholder="{{ STATIC_PASSWORD_PLACEHOLDER }}" required="" />
         <button class="btn btn-lg btn-primary btn-block" type="submit">
           Login
         </button>
       </form>
     </div>
-
   </div>
   <div class="footer gradient">
     <div class="pull-left">

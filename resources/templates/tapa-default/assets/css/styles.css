@@ -27,6 +27,7 @@
       background-position: 50% 50%;
       background-image: url(../img/new_background.jpg);
       background-repeat:repeat;
+      z-index:-1;
   }
   .form-signin {
       max-width: 380px;
@@ -60,9 +61,6 @@
       margin-top:20px;
       border-radius: 0 !important;
       -moz-border-radius: 0 !important;
-  }
-  .container {
-      margin-top:80px;
   }
   .header {
       position:fixed;
