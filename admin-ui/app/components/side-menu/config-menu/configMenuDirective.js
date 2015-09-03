@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module('config-menu-directive',['config-service']);
+  var app = angular.module('sideMenuModule');
 
   app.directive('configMenu',['configService','$mdDialog','$timeout',
     function(configService,$mdDialog,$timeout){

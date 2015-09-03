@@ -3,12 +3,11 @@
   var app = angular.module(
   	'tapa',
   	[
-  		'splash-screen-directive',
-  		'side-menu-directive',
+  		'splashScreenModule',
+  		'sideMenuModule',
   		'ngMaterial',
-  		'waypoint-config-directive',
-  		'tapa-footer-directive',
-  		'templates-list-directive'
+  		'footerModule',
+  		'templatesModule'
   	]
   ).config(function($mdThemingProvider) {
       $mdThemingProvider.theme('default')

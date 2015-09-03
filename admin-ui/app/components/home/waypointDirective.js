@@ -1,11 +1,14 @@
 
 (function(){
 
-  var app = angular.module('waypoint-config-directive', [] );
+  var app = angular.module('waypointModule', [] );
   
   /* This hooks the waypoint JQuery plugin to 
   	 the attribute waypoint-config attribute
   	 of an element.
+
+  	 TODO: do this in the angular fashion
+  	 	- DOM manipulation is no good
    */
   app.directive('waypointConfig',function(){
   	return {

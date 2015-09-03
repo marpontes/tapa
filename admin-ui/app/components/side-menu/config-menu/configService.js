@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module('config-service',[]);
+  var app = angular.module('sideMenuModule');
 
   app.factory('configService', ['$http', function($http) {
 

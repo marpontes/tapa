@@ -1,7 +1,7 @@
 
 (function(){
 
-  var app = angular.module('overlay-service', [] );
+  var app = angular.module('overlayModule', [] );
   
   /* 
    */

@@ -1,7 +1,7 @@
 
 (function(){
 
-  var app = angular.module('tapa-footer-directive', [] );
+  var app = angular.module('footerModule', [] );
 
   app.directive('tapaFooter',function(){
   	return {

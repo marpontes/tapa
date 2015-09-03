@@ -1,8 +1,8 @@
 (function(){
 
   var app = angular.module(
-    'side-menu-directive',
-    ['config-menu-directive','info-menu-directive','overlay-service']);
+    'sideMenuModule',
+    ['overlayModule']);
 
   app.directive('sideMenu',['overlayService',function(overlayService){
     return {
@@ -16,6 +16,8 @@
 
         var menuSide = null;
 
+        /* TODO: Remove these DOM manipulations
+         */
         $scope.showMenu = function(side){
           overlayService.showOverlay($scope.disposeMenu);
           $(".tapa-side-menu.tapa-side-menu-"+side).removeClass('tapa-side-menu-hidden');

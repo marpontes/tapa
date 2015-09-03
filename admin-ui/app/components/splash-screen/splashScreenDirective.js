@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module('splash-screen-directive',[]);
+  var app = angular.module('splashScreenModule',[]);
 
   app.directive('splashScreen',function(){
     return {

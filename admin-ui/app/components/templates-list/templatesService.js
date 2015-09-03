@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module('templates-service',[]);
+  var app = angular.module('templatesModule');
 
   app.factory('templatesService', ['$http', function($http) {
 

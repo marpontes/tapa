@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="bootstrap">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{{ TAPA_TITLE }}</title>
+  <meta name="gwt:property" content="locale={{ TAPA_LOCALE }}">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>   
+  <script src="//cdnjs.cloudflare.com/ajax/libs/trianglify/0.2.1/trianglify.min.js"></script>   
+  <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>    
+
+  <link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css" rel="stylesheet" type="text/css">
+  <link href="content/tapa/resources/templates/material/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+  <script language="javascript">if( {{TAPA_LOGGEDIN}} ) location.href="/"</script>
+  <div class="row center login-form">
+    <div class="col s12 m4 l2 offset-m4 offset-l5 white z-depth-2">
+      <div class="col s12">
+        <img class="col s12" src="content/tapa/resources/templates/material/assets/img/scora-logo.png" />
+      </div>
+      <form id="loginForm" action="j_spring_security_check" method="post">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="j_username" name="j_username" type="text" class="validate">
+            <label for="j_username">Username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="j_password" name="j_password" type="password" class="validate">
+            <label for="j_password">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <a class="waves-effect waves-light btn light-blue lighten-2" onclick="document.getElementById('loginForm').submit()">Entrar</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+$(function(){
+
+      var pattern = Trianglify({
+        height: window.innerHeight,
+        width: window.innerWidth,
+        cell_size: 50,
+        variance: "0.01", 
+        // seed: '2q4ya',
+        x_colors: 'random',
+        // x_colors: 'Blues',
+        // x_colors: ['#90caf9', '#29b6f6']
+      });
+
+      $( '.login-form' ).append(pattern.canvas());
+
+});
+
+
+  </script>
+</body>
+</html>

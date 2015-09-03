@@ -1,6 +1,6 @@
 (function(){
 
-  var app = angular.module('info-menu-directive',[]);
+  var app = angular.module('sideMenuModule');
 
   app.directive('infoMenu',function(){
     return {

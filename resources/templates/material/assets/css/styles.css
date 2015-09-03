@@ -1,0 +1,28 @@
+.login-form {
+  margin-top: 15em;
+}
+.login-form canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  z-index: -1;
+}
+.login-form img {
+  margin: 2em 0;
+}
+.login-form form {
+  padding: 1em 0;
+}
+.login-form input[type=password]:focus:not([readonly]),
+.login-form input[type=email]:focus:not([readonly]) {
+  border-bottom: 1px solid #4fc3f7;
+  box-shadow: 0 1px 0 0 #4fc3f7;
+}
+.login-form label.active,
+.login-form input[type=password]:focus:not([readonly]) + label,
+.login-form input[type=email]:focus:not([readonly]) + label {
+  color: #4fc3f7;
+}

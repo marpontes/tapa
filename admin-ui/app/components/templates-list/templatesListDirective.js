@@ -1,7 +1,7 @@
 
 (function(){
 
-  var app = angular.module('templates-list-directive', ['templates-service'] );
+  var app = angular.module('templatesModule', ['waypointModule'] );
 
   app.directive('templatesList',['templatesService','$mdDialog','$timeout', function(templatesService,$mdDialog,$timeout){
   	return {
