@@ -26,3 +26,12 @@
 .login-form input[type=email]:focus:not([readonly]) + label {
   color: #4fc3f7;
 }
+
+.hidden-submit {
+    border: 0 none;
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
