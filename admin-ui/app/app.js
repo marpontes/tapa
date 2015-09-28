@@ -12,6 +12,12 @@
   ).config(function($mdThemingProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('purple');
-      })
+  }).controller("PortalController",['$window',function($window){
+
+    this.openNewWindow = function(){
+      $window.open("./index.html");
+    };
+
+  }]);
 
 })();

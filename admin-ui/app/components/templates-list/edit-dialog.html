@@ -1,0 +1,61 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>{{editCtrl.current.name}}</h2>
+      <span flex></span>
+        <md-button class="md-icon-button" aria-label="More" ng-click="editCtrl.cancel()">
+          <md-icon class="material-icons" ng-bind="'close'"></md-icon>
+        </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="min-width:700px;max-height:810px; ">
+  	<section>
+  			<md-subheader class="md-primary">Text Tags</md-subheader>
+	  		<div layout="row" layout-align="center center">
+	  			 <div flex="75"  class="text-center md-subhead">
+				    <p>Text tags excelent to change change text values in your template.</p>
+				    <p>In this section, you can edit/remove existing tags as well as add new ones.</p>
+				 </div>
+	  		</div>
+	  		<md-divider></md-divider>
+	  		<div ng-repeat="tagItem in editCtrl.current.textTags" layout="row" layout-margin>
+	  			<div class="col text-right" flex="50">
+	  				<div layout="row">
+						<span>
+							<a ng-click="editCtrl.removeTag(tagItem)" href="javascript:;" style="text-decoration:none;">
+								—
+								<md-tooltip>Remove this tag</md-tooltip>
+							</a>
+						</span> <div flex><input ng-model="tagItem.tag" type="text" style="width:100%;border:0;font-weight:bold;text-align:right"></input></div>
+					</div>
+	  			</div>
+	  			<div class="col text-left" flex="50">
+	  				<input ng-model="tagItem.value" type="text" style="width:80%;border:0;"></input>
+	  			</div>
+	  		</div>
+	  		<div layout="row" layout-align="center center">
+					<md-button class="md-icon-button" aria-label="More" ng-click="editCtrl.addTag()">
+			          <md-icon class="material-icons" ng-bind="'add'"></md-icon>
+			          <md-tooltip>
+			          	Add new Text Tag
+			      	  </md-tooltip>
+			        </md-button>
+	  		</div>
+
+  	</section>
+
+
+  </md-dialog-content>
+  <div class="md-actions" layout="row">
+
+    <span flex></span>
+    <md-button ng-click="editCtrl.cancel()" >
+     Cancel
+    </md-button>
+    <md-button ng-click="editCtrl.submit()" style="margin-right:20px;" >
+      Submit
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

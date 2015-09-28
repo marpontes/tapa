@@ -18,7 +18,7 @@
                         <h2 class="md-title">{{template.name}}</h2>
                     </md-card-content>
                     <div class="md-actions" layout="row" layout-align="end center">
-                        <md-button class="md-icon-button" aria-label="More" disabled="disabled">
+                        <md-button ng-click="templatesListCtrl.edit(template, $event)" class="md-icon-button" aria-label="More" >
                             <md-icon md-svg-icon="assets/img/edit.svg"></md-icon>
                         </md-button>
                         <md-button ng-click="templatesListCtrl.activateTemplate(template, $event)" class="md-icon-button tapa-check-template {{ template.active ? 'active-template' : '' }}" aria-label="More">
@@ -29,6 +29,14 @@
             </md-grid-tile>
 
         </md-grid-list>
+    </div>
+    <div class="pull-right">
+
+        <md-button ng-click="pCtrl.openNewWindow()">
+            <span>Open in new window</span>
+            <md-icon class="material-icons md-16" ng-bind="'open_in_new'">open_in_new</md-icon>
+        </md-button>
+
     </div>
 
 </section>
