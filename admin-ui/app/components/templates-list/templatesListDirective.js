@@ -3,8 +3,8 @@
 
   var app = angular.module('templatesModule', ['waypointModule'] );
 
-  app.directive('templatesList',['templatesService','$mdDialog','$timeout', '$document',
-    function(templatesService,$mdDialog,$timeout,$document){
+  app.directive('templatesList',['templatesService','$mdDialog','$timeout', '$document','$window',
+    function(templatesService,$mdDialog,$timeout,$document,$window){
       	return {
       		restrict : 'E',
       		templateUrl : 'app/components/templates-list/templates-list.html',
@@ -86,7 +86,7 @@
       	}
   }]);
 
-function EditDialogController($scope, $mdDialog, templatesService){
+function EditDialogController($scope, $mdDialog, templatesService, $window){
   var _original = templatesService.getCurrent(),
       ctrl = this;
 
@@ -102,16 +102,18 @@ function EditDialogController($scope, $mdDialog, templatesService){
   };
 
   this.submit = function(){
+    ctrl.current.textTags.map(function(e){e;
+      delete e["$$hashKey"];
+      return e;
+    });
     templatesService.submitChanges(_original, ctrl.current)
     .success(function(data, status, headers, config){
       console.log(data);
       ctrl.hide();
+      $window.location.reload();
     })
     .error(function(a,b,c){
       "[Tapa Plugin] Error loading Templates list";
-      console.log(a);
-      console.log(b);
-      console.log(c);
     });
 
     //needs to be called from within a promise
