@@ -1,3 +1,20 @@
-	  <div ng-show="splashCtrl.showSplash" class="tapa-splash-screen tapa-splash-background gradient">
-	  	<button ng-click="disposeSplash()">dismiss</button>
-	  </div>
+  <div ng-show="splashCtrl.varShowSplash" class="tapa-splash-screen tapa-splash-background gradient tapa-radius-3">
+
+    <div class="clearfix tapa-splash-header">
+    	<span class="md-title text-white">Welcome</span>
+    	<md-button class="pull-right tapa-menu tapa-icon md-icon-button md-primary" ng-click="splashCtrl.disposeSplash()" aria-label="Settings">
+      		<md-icon md-svg-icon="assets/img/close.svg"></md-icon>
+    	</md-button>
+    </div>
+
+    <md-dialog-content class="clearfix tapa-splash-content tapa-padding-top-20">
+		<div class="layout layout-row layout-align-center-center layout-sm layout-sm-column">
+			<div class="tapa-logo-splash" ng-include="'assets/img/logo.svg'"></div>
+		</div>
+
+		<splash-item ng-repeat="item in splashCtrl.splashItems">
+		</splash-item>
+
+	</md-dialog-content>
+
+  </div>

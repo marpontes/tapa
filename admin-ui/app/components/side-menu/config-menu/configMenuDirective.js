@@ -41,10 +41,18 @@
                 data["pluginEnabled"]==false ) {
               configCtrl.pluginEnabled = data["pluginEnabled"];
               configCtrl.showSplashScreen = data["showSplashScreen"];
+
+              // Communication with the splashScreenModule
+              configService.setShowSplash(configCtrl.showSplashScreen);
+              configService.notifySplashObservers();
+              configService.clearSplashObservers();
+
               configCtrl.dataLoaded = true;
               configCtrl.errorLoading = false;
               configCtrl.enablePluginSwitch = true;
               configCtrl.enableSplashSwitch = true;
+
+
             }
           })
           .error(function(data, status, headers, config) {
@@ -65,7 +73,8 @@
           .error(function(){
             configCtrl.showAlert("Error toggling Splash Screen setting.");
             configCtrl.enableSplashSwitch = true;
-            configCtrl.showSplashScreen = !configCtrl.showSplashScreen
+            configCtrl.showSplashScreen = !configCtrl.showSplashScreen;
+            configService.setShowSplash(configCtrl.showSplashScreen);
           });
         }
 

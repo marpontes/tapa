@@ -18,6 +18,9 @@
                         <h2 class="md-title">{{template.name}}</h2>
                     </md-card-content>
                     <div class="md-actions" layout="row" layout-align="end center">
+                        <md-button ng-click="templatesListCtrl.download(template, $event)" class="md-icon-button" aria-label="More" >
+                            <md-icon md-svg-icon="assets/img/download.svg"></md-icon>
+                        </md-button>
                         <md-button ng-click="templatesListCtrl.edit(template, $event)" class="md-icon-button" aria-label="More" >
                             <md-icon md-svg-icon="assets/img/edit.svg"></md-icon>
                         </md-button>
@@ -30,7 +33,7 @@
 
         </md-grid-list>
     </div>
-    <div class="pull-right">
+    <div class="pull-right tapa-margin-top-20 tapa-padding-top-20">
 
         <md-button ng-click="pCtrl.openNewWindow()">
             <span>Open in new window</span>

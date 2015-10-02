@@ -1,0 +1,31 @@
+<div class="tapa-splash-item-container clearfix tapa-margin-top-20 tapa-margin-bottom-60">
+	<div class="tapa-splash-item-title clearfix text-center text-white no-outline" ng-click="siCtrl.toggleDetails()" ng-class="{'open':!siCtrl.detailsHidden}">
+		{{item.title}}
+    	<md-button class="pull-right tapa-menu tapa-icon md-icon-button md-primary"  aria-label="Settings">
+      		<md-icon class="material-icons tapa-splash-details-icon" class="text-white" style="color:white;">{{siCtrl.getArrow()}}</md-icon>
+    	</md-button>
+	</div>
+
+
+		<div ng-include="item.moreTemplate" class="tapa-splash-item-details-container tapa-splash-item-details-container-hidden" ng-class="{' tapa-splash-item-details-container-hidden' : siCtrl.detailsHidden}">
+
+		</div>
+
+
+	<div class="tapa-splash-item-content" layout="row" layout-margin>
+
+		<div flex class="text-right tapa-splash-item-content-img">
+			<img ng-src="{{item.img}}" height="180">
+		</div>
+		<div flex class="text-left">
+
+					<md-list flex class="tapa-splash-item-content-list">
+					  <md-list-item ng-repeat="detail in item.itemsList" class="md-1-line">
+					    <md-icon class="material-icons" class="text-white" style="color:white;">check</md-icon>
+					    <p class="text-white"> {{ detail }} </p>
+					  </md-list-item>
+					</md-list>
+
+		</div>
+	</div>
+</div>

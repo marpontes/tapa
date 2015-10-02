@@ -4,7 +4,41 @@
 
   app.factory('configService', ['$http', function($http) {
 
+  		var _showSplash = null,
+  		    _splashCallback = function(){},
+  		    _splashObserverCallbacks = [];
+
 	    return {
+
+	    	registerSplashObserverCallback : function(callback){
+			    _splashObserverCallbacks.push(callback);
+			},
+
+			registerSplashCallback : function(callback){
+				_splashCallback = callback
+			},
+
+			getSplashCallback : function(){
+				return _splashCallback;
+			},
+
+			clearSplashObservers : function(){
+				_splashObserverCallbacks = [];
+			},
+
+			notifySplashObservers : function(){
+			    angular.forEach(_splashObserverCallbacks, function(callback){
+			      callback();
+			    });
+			 },
+
+	    	setShowSplash : function(newValue){
+	    		_showSplash = newValue;
+	    	},
+
+	    	getShowSplash : function(){
+	    		return _showSplash;
+	    	},
 
 	    	getConfig : function(){
 				var url = "/pentaho/plugin/tapa/api/getconfig";
@@ -26,6 +60,8 @@
 	    					+showSplashScreen;
 		    	return $http.get(url);
 	    	}
+
+
 
 	    };
 	}]);

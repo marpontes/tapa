@@ -1,0 +1,76 @@
+<div>
+
+	<h1>Insert your company logo</h1>
+
+	<p>
+		We're delivering along with our tapa-default template a way to inject your company logo into your <em>User Console</em> toolbar.
+	</p>
+	<p>
+		If you're just a user that also wants your logo there, be our guest and replace that logo with yours, by clicking the edit button <i class="material-icons tapa-inline-icon text-gray">mode_edit</i> choosing the right image to replace.
+	</p>
+	<p>
+		But if you're a little more curious on how it's done, pease take a seat. We've just used one of the Pentaho's plugins built-in features that is the ability to inject Javascript and CSS files into different contexts. For placing that logo over there, we've just injected one CSS telling where's the image and styling the element and one JS file that creates the element where we want. That's it.
+	</p>
+
+	<h1>Replace Pentaho's welcome page</h1>
+
+	<p>
+		With the same strategy that we've used for placing your logo on PUCs toolbar, we can also give your home screen a new interface. If you want to enable this example, just make sure to choose our <strong>tapa-defailt</strong> and include into its injections, the file <strong>welcome-redirect.js</strong>.
+	</p>
+	<p>
+		If you're a developer and wants to customize your welcome-page, place your simple html into your template folder and edit a <strong>welcome-redirect.js</strong> like file to do your redirection. This javascript only does it right for the CE Edition, though it's also possible to do this tweak on the Enterprise Edition.
+	</p>
+
+
+	<h1>Inject CSS/Javascript into Mantle</h1>
+
+	<p>
+		We've mentioned that injecting such types of files is a built-in feature of the Pentaho's plugin platform. We've just made that a little easier here.
+	</p>
+	<p>
+		This feature is more helpful for developers and guys that know what they're doing. So if you're one of those guys, i bet you know what it does. To choose what files are going to be injected just click the edit button <i class="material-icons tapa-inline-icon text-gray">mode_edit</i> and choose the right ones from within your template structure.
+	</p>
+
+
+	<h1>Develop your own pagkage</h1>
+
+	<p>
+		Our login pages templates are processed using <a target="_blank" href="http://www.mitchellbosecke.com/pebble/home">Pebble</a>. These templates are server-side processed and we did it so all the presentation layer is separated from the server-side code.
+	</p>
+	<p>
+		If you want to develop your own login template page, you can get started copying one of ours. But if you want to do it from scratch, just make sure to do at least a login form that submits a <code>POST</code> to <code>j_spring_security_check</code> passing <code>j_username</code> and <code>j_password</code>. That's it.
+	</p>
+	<p>
+		And as a server-side processed template, we've also provided a list of variables that our original PUCLogin.jsp page used, so you can use these in your template with the notation <code>{{ VARIABLE_NAME }}</code>. Here is the list:
+	</p>
+
+
+	<pre>
+	  TAPA_TITLE          Messages.getInstance().getString("UI.PUC.TITLE")
+	  TAPA_LOCALE         ESAPI.encoder().encodeForHTMLAttribute(request.getLocale().toString())
+	  TAPA_LOGIN_TITLE    Messages.getInstance().getString("UI.PUC.LOGIN.TITLE")
+	  TAPA_USERNAME       Messages.getInstance().getString("UI.PUC.LOGIN.USERNAME")
+	  TAPA_PASSWORD       Messages.getInstance().getString("UI.PUC.LOGIN.PASSWORD")
+	  TAPA_LOGIN          Messages.getInstance().getString("UI.PUC.LOGIN.LOGIN")
+	  TAPA_EVAL_LOGIN     Messages.getInstance().getString("UI.PUC.LOGIN.EVAL_LOGIN")
+	  TAPA_ADMIN_USER     Messages.getInstance().getString("UI.PUC.LOGIN.ADMIN_USER")
+	  TAPA_BUSINESS_USER  Messages.getInstance().getString("UI.PUC.LOGIN.BUSINESS_USER")
+	  TAPA_GO             Messages.getInstance().getString("UI.PUC.LOGIN.GO")
+	  TAPA_COPYRIGHT      Messages.getInstance().getString("UI.PUC.LOGIN.COPYRIGHT", String.valueOf(year))
+	  TAPA_ERROR_CAPTION  Messages.getInstance().getString("UI.PUC.LOGIN.ERROR.CAPTION")
+	  TAPA_LOGIN_ERROR    Messages.getInstance().getString("UI.PUC.LOGIN.ERROR")
+	  TAPA_LOGIN_OK       Messages.getInstance().getString("UI.PUC.LOGIN.OK")
+	  TAPA_REQUESTED_URL  ESAPI.encoder().encodeForJavaScript(requestedURL)
+	  TAPA_SHOWUSERS      showUsers
+	  TAPA_LOGGEDIN       loggedIn
+	</pre>
+
+	<p>
+		These variables, along with the ones you define in your user-interface, are passed down to the template on the server side.
+	</p>
+
+	<p>
+		If you're developing an Angularjs app for your login page and you want your angular template variables to be rendered with the curly brackets, make sure to write them as <code>{{ng ANGULAR_VAR }}</code>. Mind the <strong>ng</strong>. <a target="_blank" href="http://www.pippo.ro/doc/templates/pebble.html">Click here for more information</a>.
+	</p>
+
+</div>

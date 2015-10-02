@@ -22,6 +22,49 @@ body.tapa-locked{
 
 }
 
+.tapa-radius-3{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.text-white{
+	color:#fff;
+}
+
+.text-green{
+	color:green;
+}
+
+.text-gray{
+	color:gray;
+}
+
+.tapa-inline-icon{
+	font-size:16px;
+}
+
+.no-outline:focus{outline: 0;}
+
+.tapa-margin-top-20{margin-top:20px;}
+.tapa-margin-bottom-20{margin-bottom:20px;}
+.tapa-margin-left-20{margin-left:20px;}
+.tapa-margin-right-20{margin-right:20px;}
+
+.tapa-padding-top-20{padding-top:20px;}
+.tapa-padding-bottom-20{padding-bottom:20px;}
+.tapa-padding-left-20{padding-left:20px;}
+.tapa-padding-right-20{padding-right:20px;}
+
+.tapa-margin-top-60{margin-top:60px;}
+.tapa-margin-bottom-60{margin-bottom:60px;}
+.tapa-margin-left-60{margin-left:60px;}
+.tapa-margin-right-60{margin-right:60px;}
+
+.tapa-padding-top-60{padding-top:60px;}
+.tapa-padding-bottom-60{padding-bottom:60px;}
+.tapa-padding-left-60{padding-left:60px;}
+.tapa-padding-right-60{padding-right:60px;}
 
 
 /* ==============================================
@@ -43,13 +86,134 @@ body.tapa-locked{
 
 .tapa-splash-screen {
 	position:fixed;
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
+	z-index:100;
+	top:5%;
+	bottom:5%;
+	left:5%;
+	right:5%;
 	background-color:#6c4c7a;
 }
 
+.tapa-logo-splash{
+
+}
+
+.tapa-logo-splash svg{
+	height:120px;
+	fill:white !important;
+}
+
+.tapa-logo-splash svg path{
+	fill:white !important;
+}
+
+.tapa-splash-header{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.tapa-splash-content {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 48px;
+    overflow-y: auto;
+}
+
+.tapa-splash-content-whitebox{
+	background-color:#fff;
+	margin-left: 10%;
+	margin-right:10%;
+	padding:30px;
+
+}
+
+.tapa-splash-item-container{
+	margin-left:10%;
+	margin-right:10%;
+	position:relative;
+    min-height: 280px;
+}
+
+.tapa-splash-item-title{
+	font-size:26px;
+	letter-spacing:-0.05em;
+	font-weight:300;
+	border-bottom:solid 1px rgba(255,255,255,.1);
+    position: relative;
+}
+
+.tapa-splash-item-title.open{
+}
+
+.tapa-splash-item-title > button{
+    position: absolute;
+    right: 0;
+    margin:0;
+}
+
+.tapa-splash-item-content{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 48px;
+    z-index: -1;
+}
+
+.tapa-splash-item-content-list{
+}
+
+.tapa-splash-item-content-list md-list-item > md-icon:first-child{
+	margin-top:0;
+	margin-bottom:0;
+}
+
+
+.tapa-splash-item-content-list md-list-item{
+	min-height:0;
+
+	font-size:18px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.tapa-splash-item-content-img{
+	padding-right:30px;
+}
+
+.tapa-splash-header >span{
+	line-height:48px;
+	margin-left:15px;
+}
+
+.tapa-splash-item-details-container{
+	background-color:#fff;
+    overflow: hidden;
+    max-height:2000px;
+
+    font-size:16px;
+}
+
+.tapa-splash-item-details-container > div{
+	padding:20px;
+}
+
+.tapa-splash-item-details-container{
+    -webkit-transition: max-height ease-in-out 900ms;
+    -moz-transition: max-height ease-in-out 900ms;
+    -o-transition: max-height ease-in-out 900ms;
+    transition: max-height ease-in-out 900ms;
+}
+
+.tapa-splash-item-details-container.tapa-splash-item-details-container-hidden{
+	max-height:0;
+}
+
+
+.tapa-splash-details-icon{
+    font-size: 40px;
+    margin-top: -25px;
+}
 /* ==============================================
 	Header
    ============================================== */
@@ -461,3 +625,5 @@ md-card.tapa-template-card md-card-content{
 .tapa-card-img-wrapper {
   min-height: 274px;
 }
+
+

@@ -29,7 +29,9 @@
           <md-icon md-svg-icon="assets/img/menu.svg"></md-icon>
         </md-button>
 
-        <div class="container tapa-header-centered tapa-logo " ng-include="'assets/img/logo.svg'"></div>
+        <div class="container tapa-header-centered tapa-logo ">
+          <div class="no-outline" ng-include="'assets/img/logo.svg'" ng-click="pCtrl.showSplash()"></div>
+        </div>
 
         <md-button class="pull-right tapa-menu tapa-icon md-icon-button md-primary" ng-click="showMenu('right')" aria-label="Settings">
           <md-icon md-svg-icon="assets/img/info.svg"></md-icon>
@@ -74,6 +76,7 @@
     <script src="app/components/home/overlayService.js"></script>
     <script src="app/components/side-menu/sideMenuDirective.js"></script>
     <script src="app/components/splash-screen/splashScreenDirective.js"></script>
+    <script src="app/components/splash-screen/splashItemDirective.js"></script>
     <script src="app/components/side-menu/config-menu/configService.js"></script>
     <script src="app/components/side-menu/config-menu/configMenuDirective.js"></script>
     <script src="app/components/side-menu/info-menu/infoMenuDirective.js"></script>
