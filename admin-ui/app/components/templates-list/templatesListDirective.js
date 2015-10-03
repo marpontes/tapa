@@ -81,6 +81,13 @@
               });
             };
 
+            this.download = function(template, ev){
+              $window.location = 
+                "../../../plugin/tapa/api/downloadtemplate?paramtemplate="+
+                template.name;
+
+            };
+
       		}
 
       	}

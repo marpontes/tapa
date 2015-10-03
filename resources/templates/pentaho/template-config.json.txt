@@ -1,1 +1,0 @@
-{"thumbnailImageUrl":"assets/img/pentaho-screenshot.png","externalResources":[],"textTags":[{"tag":"NEW_TAG","value":"----Write here----"}]}
