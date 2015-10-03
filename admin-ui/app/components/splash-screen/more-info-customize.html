@@ -41,7 +41,7 @@
 		If you want to develop your own login template page, you can get started copying one of ours. But if you want to do it from scratch, just make sure to do at least a login form that submits a <code>POST</code> to <code>j_spring_security_check</code> passing <code>j_username</code> and <code>j_password</code>. That's it.
 	</p>
 	<p>
-		And as a server-side processed template, we've also provided a list of variables that our original PUCLogin.jsp page used, so you can use these in your template with the notation <code>{{ VARIABLE_NAME }}</code>. Here is the list:
+		And as a server-side processed template, we've also provided a list of variables that our original PUCLogin.jsp page used, so you can use these in your template with the notation <code ng-non-bindable>{{ VARIABLE_NAME }}</code>. Here is the list:
 	</p>
 
 
@@ -70,7 +70,7 @@
 	</p>
 
 	<p>
-		If you're developing an Angularjs app for your login page and you want your angular template variables to be rendered with the curly brackets, make sure to write them as <code>{{ng ANGULAR_VAR }}</code>. Mind the <strong>ng</strong>. <a target="_blank" href="http://www.pippo.ro/doc/templates/pebble.html">Click here for more information</a>.
+		If you're developing an Angularjs app for your login page and you want your angular template variables to be rendered with the curly brackets, make sure to write them as <code ng-non-bindable>{{ng ANGULAR_VAR }}</code>. Mind the <strong>ng</strong>. <a target="_blank" href="http://www.pippo.ro/doc/templates/pebble.html">Click here for more information</a>.
 	</p>
 
 </div>
