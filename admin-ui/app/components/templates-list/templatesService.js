@@ -27,13 +27,15 @@
 	    	},
 
 	    	submitChanges : function(old, newGuy){
-
 	    		var newStr = JSON.stringify(newGuy),
 	    			url = "/pentaho/plugin/tapa/api/edittemplate?paramtemplate="
 							+old.name+'&paramnewData='+ newStr;
+		    	return $http.get(url);
+	    	},
 
-							console.log(newStr);
-
+	    	getAssetsListForTemplate : function(templateName){
+	    		var url = "/pentaho/plugin/tapa/api/gettemplateassets?paramtemplate="
+							+templateName;
 		    	return $http.get(url);
 	    	}
 

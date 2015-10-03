@@ -75,9 +75,9 @@
 
               })
               .then(function(answer) {
-                console.log('You said the information was "' + answer + '".');
+                
               }, function() {
-                console.log( 'You cancelled the dialog.');
+                
               });
             };
 
@@ -88,7 +88,8 @@
 
 function EditDialogController($scope, $mdDialog, templatesService, $window){
   var _original = templatesService.getCurrent(),
-      ctrl = this;
+      ctrl = this,
+      _templateAssets = new Array();
 
   this.current = angular.copy(_original);
   this.current.textTags = this.current.textTags !== undefined ? this.current.textTags  : [] ;
@@ -102,21 +103,21 @@ function EditDialogController($scope, $mdDialog, templatesService, $window){
   };
 
   this.submit = function(){
+
+    ctrl.current.externalResources = getTemplateInjections();
+
     ctrl.current.textTags.map(function(e){e;
       delete e["$$hashKey"];
       return e;
     });
     templatesService.submitChanges(_original, ctrl.current)
     .success(function(data, status, headers, config){
-      console.log(data);
       ctrl.hide();
       $window.location.reload();
     })
     .error(function(a,b,c){
-      "[Tapa Plugin] Error loading Templates list";
+      "[Tapa Plugin] Error submitting template changes";
     });
-
-    //needs to be called from within a promise
     
   };
 
@@ -138,7 +139,61 @@ function EditDialogController($scope, $mdDialog, templatesService, $window){
     }
   };
 
+  this.isAssetsEmpty = function(){
+    return _templateAssets.length == 0;
+  };
 
+  this.getAssetsList = function(){
+    return _templateAssets;
+  };
+
+  function isEnabled(asset){
+    var arr = ctrl.current.externalResources;
+    for(var x = 0 ; x < arr.length ; x++ ){
+      if(arr[x].url === asset)
+        return true;
+    }
+    return false;
+  }
+
+  function getTemplateInjections(){
+
+    var newArr = new Array();
+
+    function getType(asset){
+      return asset.substring(asset.lastIndexOf(".")+1);
+    }
+
+    function getElement(asset){
+      return {  
+         "type" : getType(asset),
+         "context" : "mantle",            // Sorry, only mantle context for now
+         "url" : asset
+      };
+    }
+
+    for(var x = 0 ; x < _templateAssets.length ; x++ ){
+      if(_templateAssets[x].enabled)
+        newArr.push(getElement(_templateAssets[x].fileName));
+    }
+
+    return newArr;
+
+  }
+
+  templatesService.getAssetsListForTemplate(this.current.name)
+  .success(function(data){
+
+    if( data.queryInfo.totalRows > 0 ){
+        _templateAssets = data.resultset.map(function(elm){
+          return {fileName : elm[0] , enabled : isEnabled(elm[0]) };
+        });
+    }
+
+  })
+  .error(function(){
+    console.log("[Tapa Plugin] Error loading assets list");
+  });
 
 
 

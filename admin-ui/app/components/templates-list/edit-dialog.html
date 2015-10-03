@@ -9,7 +9,7 @@
         </md-button>
     </div>
   </md-toolbar>
-  <md-dialog-content style="min-width:700px;max-height:810px; ">
+  <md-content style="min-width:700px;max-height:810px;overflow-x: hidden;">
   	<section>
   			<md-subheader class="md-primary">Text Tags</md-subheader>
 	  		<div layout="row" layout-align="center center">
@@ -47,7 +47,41 @@
   	</section>
 
 
-  </md-dialog-content>
+ 
+  	<section>
+  			<md-subheader class="md-primary">JS/CSS Injection</md-subheader>
+	  		<div layout="row" layout-align="center center">
+	  			 <div flex="75"  class="text-center md-subhead">
+				    <p>
+				    	Choose between these files, the ones you want to inject into your Pentaho 
+				    	User Console under mantle context. 
+				    </p>
+				    <p>
+				    	By injecting css/js files into PUC you can deliver some UI customizations and
+				    	also register an Angular-app you have developed.
+				    </p>
+
+				    <h4 ng-if="editCtrl.isAssetsEmpty()" class="text-center tapa-edit-warn">{{editCtrl.isAssetsEmpty}}You have no css/jss files in your <code>assets/</code> folder</h4>
+
+				 </div>
+	  		</div>
+	  		<md-divider></md-divider>
+	  		
+			<md-list ng-if="!editCtrl.isAssetsEmpty()"  ng-cloak>
+				  <md-list-item >
+					    <p class="text-left"> <strong>File</strong></p>
+					    <p class="text-right"><strong> Inject it?</strong></p>
+				  </md-list-item>
+				  <md-list-item ng-repeat="asset in editCtrl.getAssetsList()">
+					    <p> {{ asset.fileName }} </p>
+					    <md-checkbox class="md-secondary" ng-model="asset.enabled"></md-checkbox>
+				  </md-list-item>
+			</md-list>
+
+  	</section>
+
+
+  </md-content>
   <div class="md-actions" layout="row">
 
     <span flex></span>

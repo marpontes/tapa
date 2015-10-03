@@ -627,3 +627,14 @@ md-card.tapa-template-card md-card-content{
 }
 
 
+
+
+
+/* Edit dialog */
+
+
+.tapa-edit-warn{
+	background-color: #ddd;
+    padding: 10px;
+    border-radius: 6px;
+}
