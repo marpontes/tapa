@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<form action="/pentaho/plugin/tapa/api/upload/send" method="post" enctype="multipart/form-data" >
+			<input type="file" name="file" id="file">
+			<input type="hidden" name="endpointPath" id="endpointPath" value="plugin/tapa/api/uploadedfiletester">
+			<input type="hidden" name="queryParameters" id="queryParameters" value="&paramtemplate=tapa-default">
+			<input type="submit" value="Upload File" name="submit">
+		</form>
+	</body>
+</html>

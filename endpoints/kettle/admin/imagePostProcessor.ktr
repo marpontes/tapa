@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>getTemplateAssets</name>
+    <name>imagePostProcessor</name>
     <description>Clean Transformation</description>
     <extended_description/>
     <trans_version/>
@@ -65,11 +65,6 @@
             <description>The webapp folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
         </parameter>
         <parameter>
-            <name>assetsType</name>
-            <default_value>img</default_value>
-            <description/>
-        </parameter>
-        <parameter>
             <name>cpk.plugin.dir</name>
             <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..</default_value>
             <description>The plugin folder. This value is automatically set at runtime if &#x27;&#x23;&#x27; is removed from variable name.</description>
@@ -90,6 +85,16 @@
             <description>The default output step where the rows will be fetched for the result. Remove &#x27;&#x23;&#x27; to use variable.</description>
         </parameter>
         <parameter>
+            <name>fileUrl</name>
+            <default_value>&#x2f;opt&#x2f;biserver-nagem&#x2f;biserver-ce&#x2f;tomcat&#x2f;bin&#x2f;..&#x2f;..&#x2f;tomcat&#x2f;temp&#x2f;VITOR.prpt</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>imgUrl</name>
+            <default_value/>
+            <description/>
+        </parameter>
+        <parameter>
             <name>newData</name>
             <default_value/>
             <description/>
@@ -101,7 +106,7 @@
         </parameter>
         <parameter>
             <name>template</name>
-            <default_value>tapa-default</default_value>
+            <default_value>pentaho</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -171,51 +176,14 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>higgsBoson</from><to>assets_path</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get File Names</from><to>relative path</to><enabled>Y</enabled> </hop>
-  <hop> <from>relative path</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
-  <hop> <from>assets_path</from><to>the right regex</to><enabled>Y</enabled> </hop>
-  <hop> <from>the right regex</from><to>Get File Names</to><enabled>Y</enabled> </hop>
+  <hop> <from>higgsBoson</from><to>fileUrl</to><enabled>Y</enabled> </hop>
+  <hop> <from>fileUrl</from><to>more info</to><enabled>Y</enabled> </hop>
+  <hop> <from>Process files</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>more info</from><to>paths</to><enabled>Y</enabled> </hop>
+  <hop> <from>paths</from><to>move_to</to><enabled>Y</enabled> </hop>
+  <hop> <from>move_to</from><to>logs</to><enabled>Y</enabled> </hop>
+  <hop> <from>logs</from><to>Process files</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Get File Names</name>
-    <type>GetFileNames</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filter>
-      <filterfiletype>only_files</filterfiletype>
-    </filter>
-    <doNotFailIfNoFile>N</doNotFailIfNoFile>
-    <rownum>N</rownum>
-    <isaddresult>Y</isaddresult>
-    <filefield>Y</filefield>
-    <rownum_field/>
-    <filename_Field>assets_path</filename_Field>
-    <wildcard_Field>regex</wildcard_Field>
-    <exclude_wildcard_Field/>
-    <dynamic_include_subfolders>Y</dynamic_include_subfolders>
-    <limit>0</limit>
-    <file>
-      <name/>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>368</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>OUTPUT</name>
     <type>SelectValues</type>
@@ -227,21 +195,47 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>relativePath</name>
+    <fields>      <field>        <name>filename</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>736</xloc>
+      <xloc>864</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>assets_path</name>
+    <name>Process files</name>
+    <type>ProcessFiles</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <sourcefilenamefield>filename</sourcefilenamefield>
+    <targetfilenamefield>move_to</targetfilenamefield>
+    <operation_type>move</operation_type>
+    <addresultfilenames>N</addresultfilenames>
+    <overwritetargetfile>Y</overwritetargetfile>
+    <createparentfolder>N</createparentfolder>
+    <simulate>N</simulate>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>704</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>fileUrl</name>
     <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
@@ -253,44 +247,8 @@
            </partitioning>
     <fields>
       <field>
-        <name>till_template_path</name>
-        <variable>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;templates&#x2f;&#x24;&#x7b;template&#x7d;&#x2f;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-      </field>
-      <field>
-        <name>assets_path</name>
-        <variable>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;templates&#x2f;&#x24;&#x7b;template&#x7d;&#x2f;assets&#x2f;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-      </field>
-      <field>
-        <name>template</name>
-        <variable>&#x24;&#x7b;template&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-      </field>
-      <field>
-        <name>assetsType</name>
-        <variable>&#x24;&#x7b;assetsType&#x7d;</variable>
+        <name>fileUrl</name>
+        <variable>&#x24;&#x7b;fileUrl&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
@@ -303,7 +261,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>208</xloc>
+      <xloc>176</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
@@ -322,25 +280,13 @@
            </partitioning>
     <fields>
       <field>
-        <name>regexJscss</name>
+        <name>regex</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x28;&#x3f;i&#x29;.&#x2a;&#x5c;.&#x28;js&#x7c;css&#x29;&#x24;</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>regexImg</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>&#x28;&#x3f;i&#x29;.&#x2a;&#x5c;.&#x28;jpg&#x7c;jpeg&#x7c;png&#x7c;gif&#x29;&#x24;</nullif>
+        <nullif>.&#x2a;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -360,8 +306,8 @@
     </step>
 
   <step>
-    <name>relative path</name>
-    <type>ScriptValueMod</type>
+    <name>logs</name>
+    <type>WriteToLog</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -370,28 +316,24 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#xa;var reStr &#x3d; &#x22;&#x2f;tapa&#x28;&#x5c;&#x5c;&#x2f;&#x7c;&#x5c;&#x5c;&#x5c;&#x5c;&#x29;resources&#x28;&#x5c;&#x5c;&#x2f;&#x7c;&#x5c;&#x5c;&#x5c;&#x5c;&#x29;templates&#x28;&#x5c;&#x5c;&#x2f;&#x7c;&#x5c;&#x5c;&#x5c;&#x5c;&#x29;&#x22;&#x2b;template&#x2b;&#x22;&#x2f;&#x22;&#x3b; &#xa;var re &#x3d; new RegExp&#x28;reStr&#x29;&#x3b;&#xa;var strMatch &#x3d; &#x22;&#x22;&#x3b;&#xa;&#xa;if&#x28;filename &#x21;&#x3d; null&#x29;&#x7b;&#xa;	strMatch &#x3d; filename.match&#x28;re&#x29;&#x3b;&#xa;	if&#x28; Object.prototype.toString.call&#x28; strMatch &#x29; &#x3d;&#x3d;&#x3d; &#x27;&#x5b;object Array&#x5d;&#x27; &#x29;&#x7b;&#xa;		strMatch &#x3d; strMatch&#x5b;0&#x5d;&#x3b;&#xa;	&#x7d;else&#x7b;&#xa;		if&#x28; typeof strMatch &#x3d;&#x3d;&#x3d; &#x27;string&#x27; &#x29; &#x7b;&#xa;		    someVar &#x3d; &#x5b; someVar &#x5d;&#x3b;&#xa;		&#x7d;&#xa;	&#x7d;&#xa;&#x7d;&#xa;&#xa;var relativePath &#x3d; filename.substring&#x28;filename.indexOf&#x28;strMatch&#x29; &#x2b; &#xa;      strMatch.length&#xa;    &#x29;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>relativePath</name>
-        <rename>relativePath</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      </fields>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>544</xloc>
+      <xloc>592</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>the right regex</name>
-    <type>ScriptValueMod</type>
+    <name>more info</name>
+    <type>GetFileNames</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -400,21 +342,101 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var regex &#x3d; assetsType&#x3d;&#x3d;&#x22;jscss&#x22; &#x7c;&#x7c; assetsType&#x3d;&#x3d;&#x22;cssjs&#x22; &#x3f; regexJscss&#xa;            &#x3a; assetsType&#x3d;&#x3d;&#x22;img&#x22; &#x3f; regexImg &#x3a; &#x22;.&#x2a;&#x22;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>regex</name>
-        <rename>regex</rename>
+    <filter>
+      <filterfiletype>only_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>Y</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <filename_Field>till_template_path</filename_Field>
+    <wildcard_Field>regex</wildcard_Field>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>Y</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name>&#x24;&#x7b;fileUrl&#x7d;</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>272</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>move_to</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>move_to</field_name>
+<formula_string>template_dir&#x2b;imgUrl</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>480</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>paths</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>template_dir</name>
+        <variable>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;resources&#x2f;templates&#x2f;&#x24;&#x7b;template&#x7d;&#x2f;</variable>
         <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>imgUrl</name>
+        <variable>&#x24;&#x7b;imgUrl&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>208</xloc>
-      <yloc>144</yloc>
+      <xloc>368</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

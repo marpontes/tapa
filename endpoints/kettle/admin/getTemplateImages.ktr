@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>getTemplateAssets</name>
+    <name>getTemplateImages</name>
     <description>Clean Transformation</description>
     <extended_description/>
     <trans_version/>

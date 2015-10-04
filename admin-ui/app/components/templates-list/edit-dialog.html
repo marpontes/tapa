@@ -1,4 +1,4 @@
-<md-dialog aria-label="Mango (Fruit)">
+<md-dialog aria-label="Mango (Fruit)" id="popupContainer">
   <form>
   <md-toolbar>
     <div class="md-toolbar-tools">
@@ -61,7 +61,7 @@
 				    	also register an Angular-app you have developed.
 				    </p>
 
-				    <h4 ng-if="editCtrl.isAssetsEmpty()" class="text-center tapa-edit-warn">{{editCtrl.isAssetsEmpty}}You have no css/jss files in your <code>assets/</code> folder</h4>
+				    <h4 ng-if="editCtrl.isAssetsEmpty()" class="text-center tapa-edit-warn">You have no css/jss files in your <code>assets/</code> folder</h4>
 
 				 </div>
 	  		</div>
@@ -76,6 +76,51 @@
 					    <p> {{ asset.fileName }} </p>
 					    <md-checkbox class="md-secondary" ng-model="asset.enabled"></md-checkbox>
 				  </md-list-item>
+			</md-list>
+
+  	</section>
+
+
+ 
+  	<section>
+  			<md-subheader class="md-primary" id="imguploadprogress">Images Substitution</md-subheader>
+	  		<div layout="row" layout-align="center center">
+	  			 <div flex="75"  class="text-center md-subhead">
+				    <p>
+				    	Choose the image you want to replace. Have in mind
+				    	that the new image needs to have the same file extension. 
+				    	<strong>NOTE:</strong> Once the image is uploaded there's no way back but
+				    	to upload the old one back to its place. CANCEL can't undo it.
+				    </p>
+
+				    <h4 ng-if="editCtrl.isImagesEmpty()" class="text-center tapa-edit-warn">You have no images in your <code>assets/</code> folder</h4>
+
+				 </div>
+	  		</div>
+	  		<md-divider></md-divider>
+	  		
+			<md-list ng-if="!editCtrl.isImagesEmpty()"  ng-cloak>
+				  <md-list-item >
+					    <p class="text-left"> <strong>Image</strong></p>
+					    <p class="text-right"><strong>Action</strong></p>
+				  </md-list-item>
+				  <md-list-item class="md-2-line" ng-repeat="img in editCtrl.getImagesList()" img-dimensions id="{{img.id}}">
+
+					    		<img ng-click="editCtrl.openImage(img.srcUrl)" class="no-outline md-avatar"ng-src="{{img.getSrcUrl()}}" height="50">
+				    		    <div ng-click="editCtrl.openImage(img.srcUrl)" class="no-outline md-list-item-text">
+						          <h3>{{img.url}}</h3>
+						          <p>{{imgWidth}} x {{imgHeight}} pixels</p>
+						        </div>
+
+
+
+					    <md-icon class="material-icons no-outline" ng-click="openFileBrowser()">file_upload</md-icon>
+					    <md-divider></md-divider>
+
+				        <uploader-form class="hidden"></uploader-form>
+
+				  </md-list-item>
+
 			</md-list>
 
   	</section>
