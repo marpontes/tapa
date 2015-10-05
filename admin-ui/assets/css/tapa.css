@@ -647,3 +647,15 @@ md-card.tapa-template-card md-card-content{
 }
 
 
+md-list-item .md-list-item-inner>.md-avatar:first-child, md-list-item>.md-avatar:first-child{
+	border-radius:0;
+	width:auto;
+}
+
+
+.tapa-edit-header-input{
+	background-color: transparent;
+    border: 0;
+    background-color: rgba(255,255,255,.1);
+    padding: 8px;
+}

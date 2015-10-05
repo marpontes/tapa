@@ -2,7 +2,10 @@
   <form>
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <h2>{{editCtrl.current.name}}</h2>
+      <div>
+      	<input type="text" ng-model="editCtrl.current.name" class="tapa-radius-3 no-outline tapa-edit-header-input"></input>
+
+      </div>
       <span flex></span>
         <md-button class="md-icon-button" aria-label="More" ng-click="editCtrl.cancel()">
           <md-icon class="material-icons" ng-bind="'close'"></md-icon>
