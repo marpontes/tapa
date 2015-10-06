@@ -1,0 +1,98 @@
+<md-dialog aria-label="Mango (Fruit)" id="popupContainer">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <div>
+      	<h3>Upload new Template</h3>
+
+      </div>
+      <span flex></span>
+        <md-button class="md-icon-button" aria-label="More" ng-click="utCtrl.cancel()">
+          <md-icon class="material-icons" ng-bind="'close'"></md-icon>
+        </md-button>
+    </div>
+  </md-toolbar>
+  <md-content style="min-width:700px;max-height:810px;overflow-x: hidden;">
+
+	  		<div layout="row" layout-align="center center">
+	  			 <div flex="75"  class="text-center md-subhead tapa-margin-top-20">
+	  			 	<h1 class="text-left">Choose your file</h1>
+				    <p class="text-left">
+
+						<div>
+						    <input type="file" file-model="myFile"/>
+						</div>
+
+				    </p>
+	  			 	<h1 class="text-left">Mind the structure</h1>
+				    <p class="text-left">
+				    	The name of the template you add here is the name of the folder you zipped.
+				    	This mean that you should pack a template by typing something like
+				    	<code>$ zip -r my-template.zip ./my-template</code>.
+				    	So beware of sending a template with the same name of another preexistent one.
+				    </p>
+				    <p class="text-left">
+				    	If you're sending a fresh new template, it's also good to have in mind the basic template
+				    	structure:
+				    	<ul class="text-left">
+				    		<li>
+				    			<strong><code>assets/</code> folder</strong>
+				    			Everything that needs to be publicly accessible needs to be in that folder.
+				    			Have in mind that you're providing a public webpage and that the images, scripts
+				    			and css files your template is gonna need, must be into this folder.
+				    		</li>
+				    		<li>
+				    			<strong><code>template-config.json</code></strong>
+				    			This file has all the configurations that belong to the template and must bring the following structure:
+				    			<pre>
+{
+    /* The relative path to the screenshot of your template */
+    "thumbnailImageUrl" : "assets/img/pentaho-screenshot.png",
+
+    /* resources to load into PUC - can be an empty array if none */
+    "externalResources" : [
+        {
+            "type": "js",
+            "context": "mantle",
+            "url": "assets/js/mantle-context.js"
+        }
+    ],
+
+
+    /* Configurable text tags in your template - can be an empty array if none */
+    "textTags" : [
+        {
+            "tag": "STATIC_RIGHT_HEADER_TEXT",
+            "value": "Business Intelligence Portal"
+        }
+    ]
+}
+				    			</pre>
+				    		</li>
+				    		<li>
+				    			<strong>index.html</strong>
+				    			This is the file you need to put your Login interface into.
+				    		</li>
+				    	</ul>
+				    </p>
+				 </div>
+	  		</div>
+	  		<md-divider></md-divider>
+	  		
+
+
+
+
+  </md-content>
+  <div class="md-actions" layout="row">
+
+    <span flex></span>
+    <md-button ng-click="utCtrl.cancel()" >
+     Cancel
+    </md-button>
+    <md-button ng-click="utCtrl.upload()" style="margin-right:20px;" >
+      Send
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

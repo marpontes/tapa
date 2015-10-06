@@ -39,7 +39,7 @@
         </md-button>
 
         <div class="tapa-header-centered tapa-pill">
-          <md-button class="md-fab" aria-label="Eat cake" disabled="disabled">
+          <md-button class="md-fab no-outline" aria-label="Eat cake" ng-click="pCtrl.uploadTemplate($event)">
             <md-icon md-svg-src="assets/img/add_black.svg"></md-icon>
           </md-button>
         </div>
@@ -90,4 +90,5 @@
     <script src="app/components/templates-list/imgDimensionsDirective.js"></script>
     <script src="app/components/templates-list/uploaderDirective.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/components/home/UploadTemplateDialogController.js"></script>
 </html>

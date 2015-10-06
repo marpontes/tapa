@@ -77,6 +77,21 @@
 		            transformRequest: angular.identity,
 		            headers: {'Content-Type': undefined}
 		        });
+	    	},
+
+	    	uploadTemplate : function(file){
+
+	    		var fd = new FormData(),
+	    			url = "/pentaho/plugin/tapa/api/upload/send";
+
+        		fd.append('file', file);
+        		fd.append('endpointPath', "plugin/tapa/api/templatepostprocessor");
+        		fd.append('queryParameters', "");
+
+		        return $http.post(url, fd, {
+		            transformRequest: angular.identity,
+		            headers: {'Content-Type': undefined}
+		        });
 	    	}
 
 	    };

@@ -13,7 +13,8 @@
   ).config(function($mdThemingProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('purple');
-  }).controller("PortalController",['$window','configService',function($window,configService){
+  }).controller("PortalController",['$window','configService','$mdDialog','$document',
+  function($window,configService,$mdDialog,$document){
 
     this.openNewWindow = function(){
       $window.open("./index.html");
@@ -22,6 +23,19 @@
     this.showSplash = function(){
       configService.getSplashCallback()();
     }
+
+    this.uploadTemplate = function(ev){
+
+      $mdDialog.show({
+        controller: 'UploadTemplateDialogController',
+        controllerAs: 'utCtrl',
+        templateUrl: 'app/components/home/upload-template-dialog.html',
+        parent: angular.element($document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true
+
+      });
+    };
 
   }]);
 
