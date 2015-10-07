@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Pentaho</title>
+
+    <link rel="stylesheet" href="../../../admin-ui/assets/bootstrap/css/bootstrap.min.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+
+</head>
+
+
+<style type="text/css">
+	body{
+		background:transparent;
+		background-color:transparent;
+		font-family: "Lato";
+		font-weight: 400;
+	}
+	.promo-logo{
+	    height: 140px;
+	    background: url(assets/img/logo.png);
+	    background-size: auto 80%;
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	    border-bottom: solid 1px #ddd;
+	    margin-bottom: 20px;
+
+	}
+	.dummy-monitors{
+	    height: 200px;
+	    background: url(assets/img/login_monitor.png);
+	    background-size: auto 200px;
+	    background-repeat: no-repeat;
+	    background-position: center right;
+	}
+
+	.promo-jumbo{
+		background-color:#eee;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		margin-top:20px;
+		padding:20px;
+	}
+	.promo-text{
+		color:#333;
+		margin-top:30px;
+	}
+
+	.small-description{
+		margin-top:30px;
+	}
+</style>
+
+<body style="background:transparent;">
+	<div class="container">
+		<div class="promo-logo hidden">
+		</div>
+		<div class="row promo-jumbo">
+			<div class="col-xs-5 col-xs-offset-1 dummy-monitors">
+				
+			</div>
+			<div class="col-xs-4 text-left promo-text">
+				<h1 class="text-primary pull-left">Welcome to our Analytics Server<h1>
+			</div>
+		</div>
+		
+		<div class="row small-description">
+			<div class="col-xs-12 text-center">
+				<h2>First Actions</h2>
+				<p>
+					We strive to bring you the best analysis available. Our goal is to deliver data and insights to everyone.
+				</p>
+			</div>
+		</div>
+
+
+	</div>
+
+<p class="text-center">
+  <button type="button" class="btn btn-primary btn-lg" onClick="top.mantle_openTab('Files Browser','Files Browser','/pentaho/mantle/browser/');">Files browser on a tab</button>
+  <button type="button" class="btn btn-primary btn-lg" onClick="top.mantle_setPerspective('marketplace.perspective');">Open Marketplace</button>
+</p>
+
+<!-- I know. You will want to get rid of these alerts -->
+<div class="clearfix">&nbsp;</div>
+<div class="alert alert-warning" role="alert">
+	<strong>Note: </strong> To disable this welcome screen, edit your active template on <button type="button" class="btn btn-primary btn-xs" onClick="top.mantle_setPerspective('tapa.perspective');">Tapa</button> and disable the injection of <code>assets/js/welcome-redirect.js</code>
+</div>
+
+
+</body>
+
+</html>

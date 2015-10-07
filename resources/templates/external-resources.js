@@ -5,7 +5,14 @@
 
 (function(){
 
-	var templatesPath = "content/tapa/resources/templates";
+	if (!String.prototype.startsWith) {
+	  String.prototype.startsWith = function(searchString, position) {
+	    position = position || 0;
+	    return this.indexOf(searchString, position) === position;
+	  };
+	}
+
+	var templatesPath = CONTEXT_PATH+"content/tapa/resources/templates";
 	var jsPath = "";
 
 	/* 	@marpontes - only jquery 1.4.4 available, so.. old style.
@@ -15,7 +22,7 @@
 		"externalResources" when on mantle context.
 	*/
 	$.getJSON( CONTEXT_PATH+"plugin/tapa/api/getconfig",  function(config){
-
+		
 		if (config["pluginEnabled"] !== true)
 			return;
 
@@ -51,9 +58,11 @@
 		if(type==="css"){
 			$("<link rel='stylesheet' type='text/css' href='"+ url +"?context=mantle'/>")
 			.appendTo("head");
+			console.log("[TapaPlugin] Loaded css "+url);
 		}else if(type==="js"){
 			$("<script type='text/javascript' src='"+ url +"'></scr"+"ipt>")
 			.appendTo("head");
+			console.log("[TapaPlugin] Loaded js "+url);
 		}else{
 			console.log("[TapaPlugin] There might be something wrong with your template config. "+
 				"But no harm done");

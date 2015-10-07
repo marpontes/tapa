@@ -10,6 +10,11 @@
             "type": "js",
             "context": "mantle",
             "url": "assets/js/mantle-context.js"
+        },
+        {
+            "type": "js",
+            "context": "mantle",
+            "url": "assets/js/welcome-redirect.js"
         }
     ],
     "textTags": [
