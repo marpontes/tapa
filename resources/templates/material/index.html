@@ -19,24 +19,24 @@
   <div class="row center login-form">
     <div class="col s12 m4 l2 offset-m4 offset-l5 white z-depth-2">
       <div class="col s12">
-        <img class="col s12" src="content/tapa/resources/templates/material/assets/img/scora-logo.png" />
+        <img class="col s12" src="content/tapa/resources/templates/material/assets/img/logo.png" />
       </div>
       <form id="loginForm" action="j_spring_security_check" method="post">
         <div class="row">
           <div class="input-field col s12">
             <input id="j_username" name="j_username" type="text" class="validate">
-            <label for="j_username">Username</label>
+            <label for="j_username">{{ STATIC_USERNAME_PLACEHOLDER }}</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <input id="j_password" name="j_password" type="password" class="validate">
-            <label for="j_password">Password</label>
+            <label for="j_password">{{ STATIC_PASSWORD_PLACEHOLDER }}</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a class="waves-effect waves-light btn light-blue lighten-2" onclick="document.getElementById('loginForm').submit()">Entrar</a>
+            <a class="waves-effect waves-light btn light-blue lighten-2" onclick="document.getElementById('loginForm').submit()">{{ LOGIN_TEXT }}</a>
           </div>
         </div>
         <div class="hidden-submit"><input type="submit" tabindex="-1"/></div>

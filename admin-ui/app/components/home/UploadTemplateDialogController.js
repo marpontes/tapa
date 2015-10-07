@@ -6,8 +6,6 @@
   	[ '$scope', 'ngProgressFactory','templatesService','$mdDialog', '$window',  
   	  function($scope, ngProgressFactory, templatesService, $mdDialog, $window) {
 
-
-
 	    this.cancel = function () {
 	      $mdDialog.cancel();
 	    };
@@ -22,7 +20,6 @@
 	      $scope.progressbar.setColor('#fff');
 	      $scope.progressbar.start();
 
-
 	      templatesService
 	        .uploadTemplate(file)
 	        .then(function (data) {
@@ -30,7 +27,6 @@
 	          $mdDialog.hide();
 	          $window.location.reload();
           });
-
 
 	    };
 

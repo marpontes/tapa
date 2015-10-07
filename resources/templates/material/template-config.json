@@ -14,14 +14,6 @@
     ],
     "textTags": [
         {
-            "tag": "STATIC_RIGHT_HEADER_TEXT",
-            "value": "Business Intelligence Portal"
-        },
-        {
-            "tag": "STATIC_LOGIN_TEXT",
-            "value": "Please enter your credentials"
-        },
-        {
             "tag": "STATIC_USERNAME_PLACEHOLDER",
             "value": "Username"
         },
@@ -30,12 +22,8 @@
             "value": "Password"
         },
         {
-            "tag": "STATIC_BASED_TEXT",
-            "value": "Based on"
-        },
-        {
-            "tag": "STATIC_BROUGHT_BY_TEXT",
-            "value": "Brought to you by"
+            "tag": "LOGIN_TEXT",
+            "value": "Login"
         }
     ]
 }
