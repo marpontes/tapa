@@ -18,13 +18,16 @@
                         <h2 class="md-title">{{template.name}}</h2>
                     </md-card-content>
                     <div class="md-actions" layout="row" layout-align="end center">
-                        <md-button ng-click="templatesListCtrl.download(template, $event)" class="md-icon-button" aria-label="More" >
+                        <md-button ng-click="templatesListCtrl.preview(template, $event)" class="md-icon-button" aria-label="Preview" >
+                            <md-icon md-svg-icon="assets/img/eye.svg"></md-icon>
+                        </md-button>
+                        <md-button ng-click="templatesListCtrl.download(template, $event)" class="md-icon-button" aria-label="Download" >
                             <md-icon md-svg-icon="assets/img/download.svg"></md-icon>
                         </md-button>
-                        <md-button ng-click="templatesListCtrl.edit(template, $event)" class="md-icon-button" aria-label="More" >
+                        <md-button ng-click="templatesListCtrl.edit(template, $event)" class="md-icon-button" aria-label="Edit" >
                             <md-icon md-svg-icon="assets/img/edit.svg"></md-icon>
                         </md-button>
-                        <md-button ng-click="templatesListCtrl.activateTemplate(template, $event)" class="md-icon-button tapa-check-template {{ template.active ? 'active-template' : '' }}" aria-label="More">
+                        <md-button ng-click="templatesListCtrl.activateTemplate(template, $event)" class="md-icon-button tapa-check-template {{ template.active ? 'active-template' : '' }}" aria-label="Enable">
                             <md-icon md-svg-icon="assets/img/check_black.svg"></md-icon>
                         </md-button>
                     </div>

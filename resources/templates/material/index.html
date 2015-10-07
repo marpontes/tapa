@@ -10,7 +10,7 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>    
 
   <link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css" rel="stylesheet" type="text/css">
-  <link href="content/tapa/resources/templates/material/assets/css/styles.css" rel="stylesheet" type="text/css">
+  <link href="{{TAPA_TEMPLATE_ROOT_URL}}/assets/css/styles.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -19,7 +19,7 @@
   <div class="row center login-form">
     <div class="col s12 m4 l2 offset-m4 offset-l5 white z-depth-2">
       <div class="col s12">
-        <img class="col s12" src="content/tapa/resources/templates/material/assets/img/logo.png" />
+        <img class="col s12" src="{{TAPA_TEMPLATE_ROOT_URL}}/assets/img/logo.png" />
       </div>
       <form id="loginForm" action="j_spring_security_check" method="post">
         <div class="row">

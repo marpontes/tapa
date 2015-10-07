@@ -83,6 +83,13 @@
 
             };
 
+            this.preview = function(template, ev){
+              $window.open(  
+                "../../../plugin/tapa/api/templateservice/preview?template="+
+                template.name);
+
+            };
+
       		}
 
       	}

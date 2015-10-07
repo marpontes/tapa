@@ -14,6 +14,7 @@
     <bean id="api" class="org.pentaho.platform.web.servlet.JAXRSPluginServlet"/>
     <bean id="tapa.api" class="pt.webdetails.cpk.CpkApi"/>
     <bean id="tapa.uploader.api" class="com.oncase.biserver.ws.UploaderREST"/>
+    <bean id="tapa.render.api" class="com.oncase.tapa.ws.TapaApi"/>
 
     <!--  Content Generator  -->
     <!-- <bean id="cpk" class="pt.webdetails.cpk.CpkContentGenerator" scope="prototype"/> -->
