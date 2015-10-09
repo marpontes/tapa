@@ -63,10 +63,18 @@
 	  TAPA_REQUESTED_URL  ESAPI.encoder().encodeForJavaScript(requestedURL)
 	  TAPA_SHOWUSERS      showUsers
 	  TAPA_LOGGEDIN       loggedIn
+	  TAPA_TEMPLATE_ROOT_URL /* Path to your template so you only use relative paths on html*/
+
 	</pre>
 
 	<p>
 		These variables, along with the ones you define in your user-interface, are passed down to the template on the server side.
+	</p>
+
+	<p>
+		<strong>IMPORTANT: </strong>When referencing your template files, use the variable <code ng-non-bindable>{{TAPA_TEMPLATE_ROOT_URL}}</code>. Example:
+		<pre ng-non-bindable>&lt;link href=&quot;{{TAPA_TEMPLATE_ROOT_URL}}/assets/css/styles.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</pre>
+		Doing this way you keep your template name-independent.
 	</p>
 
 	<p>

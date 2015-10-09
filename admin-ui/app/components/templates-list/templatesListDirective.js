@@ -77,9 +77,9 @@
             };
 
             this.download = function(template, ev){
-              $window.location = 
+              $window.open( 
                 "../../../plugin/tapa/api/downloadtemplate?paramtemplate="+
-                template.name;
+                template.name);
 
             };
 
