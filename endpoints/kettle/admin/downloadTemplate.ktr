@@ -71,7 +71,7 @@
         </parameter>
         <parameter>
             <name>cpk.response.download</name>
-            <default_value>false</default_value>
+            <default_value>true</default_value>
             <description>Whether to &#x28;or not&#x29; mark the http reponse body as an attachment. Remove &#x27;&#x23;&#x27; to use variable.</description>
         </parameter>
         <parameter>
@@ -182,7 +182,7 @@
            <schema_name/>
            </partitioning>
     <filter>
-      <filterfiletype>all_files</filterfiletype>
+      <filterfiletype>only_files</filterfiletype>
     </filter>
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <rownum>N</rownum>

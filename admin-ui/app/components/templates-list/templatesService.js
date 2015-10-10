@@ -31,14 +31,14 @@
 
 	    	activateTemplate : function(templateName){
 				var url = "/pentaho/plugin/tapa/api/activatetemplate?paramtemplate="
-							+templateName;
+							+encodeURIComponent(templateName);
 		    	return $http.get(url);
 	    	},
 
 	    	submitChanges : function(old, newGuy){
 	    		var newStr = JSON.stringify(newGuy),
 	    			url = "/pentaho/plugin/tapa/api/edittemplate?paramtemplate="
-							+old.name+'&paramnewData='+ newStr;
+							+encodeURIComponent(old.name)+'&paramnewData='+ encodeURIComponent(newStr);
 		    	return $http.get(url);
 	    	},
 
@@ -47,7 +47,7 @@
 	    		var endpoint = type=="img" ? "gettemplateimages" : "gettemplateassets";
 
 	    		var url = "/pentaho/plugin/tapa/api/"+endpoint+"?paramtemplate="
-							+templateName+"&paramassetsType="+type;
+							+encodeURIComponent(templateName)+"&paramassetsType="+encodeURIComponent(type);
 
 		    	return $http.get(url);
 	    	},
@@ -71,7 +71,7 @@
 
         		fd.append('file', file);
         		fd.append('endpointPath', "plugin/tapa/api/imagepostprocessor");
-        		fd.append('queryParameters', "&paramtemplate="+template+"&paramimgUrl="+imgUrl);
+        		fd.append('queryParameters', "&paramtemplate="+template+"&paramimgUrl="+encodeURIComponent(imgUrl));
 
 		        return $http.post(url, fd, {
 		            transformRequest: angular.identity,
