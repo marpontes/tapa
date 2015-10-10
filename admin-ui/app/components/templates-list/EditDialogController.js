@@ -92,7 +92,7 @@
         $scope.progressbar.setColor('#fff');
         $scope.progressbar.start();
         templatesService
-          .uploadImage(ctrl.current.name, file, img.url)
+          .uploadImage(_original.name, file, img.url)
           .then(function (data) {
             $scope.progressbar.complete();
             img.updateRando();
