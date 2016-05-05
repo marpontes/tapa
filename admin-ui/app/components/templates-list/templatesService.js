@@ -25,19 +25,19 @@
 	    	},
 
 	    	getTemplatesList : function(){
-				var url = "/pentaho/plugin/tapa/api/gettemplateslist";
+				var url = "../../../plugin/tapa/api/gettemplateslist";
 		    	return $http.get(url);
 	    	},
 
 	    	activateTemplate : function(templateName){
-				var url = "/pentaho/plugin/tapa/api/activatetemplate?paramtemplate="
+				var url = "../../../plugin/tapa/api/activatetemplate?paramtemplate="
 							+encodeURIComponent(templateName);
 		    	return $http.get(url);
 	    	},
 
 	    	submitChanges : function(old, newGuy){
 	    		var newStr = JSON.stringify(newGuy),
-	    			url = "/pentaho/plugin/tapa/api/edittemplate?paramtemplate="
+	    			url = "../../../plugin/tapa/api/edittemplate?paramtemplate="
 							+encodeURIComponent(old.name)+'&paramnewData='+ encodeURIComponent(newStr);
 		    	return $http.get(url);
 	    	},
@@ -46,7 +46,7 @@
 
 	    		var endpoint = type=="img" ? "gettemplateimages" : "gettemplateassets";
 
-	    		var url = "/pentaho/plugin/tapa/api/"+endpoint+"?paramtemplate="
+	    		var url = "../../../plugin/tapa/api/"+endpoint+"?paramtemplate="
 							+encodeURIComponent(templateName)+"&paramassetsType="+encodeURIComponent(type);
 
 		    	return $http.get(url);
@@ -67,7 +67,7 @@
 	    	uploadImage : function(template,file,imgUrl){
 
 	    		var fd = new FormData(),
-	    			url = "/pentaho/plugin/tapa/api/upload/send";
+	    			url = "../../../plugin/tapa/api/upload/send";
 
         		fd.append('file', file);
         		fd.append('endpointPath', "plugin/tapa/api/imagepostprocessor");
@@ -82,7 +82,7 @@
 	    	uploadTemplate : function(file){
 
 	    		var fd = new FormData(),
-	    			url = "/pentaho/plugin/tapa/api/upload/send";
+	    			url = "../../../plugin/tapa/api/upload/send";
 
         		fd.append('file', file);
         		fd.append('endpointPath', "plugin/tapa/api/templatepostprocessor");

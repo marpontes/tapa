@@ -41,22 +41,22 @@
 	    	},
 
 	    	getConfig : function(){
-				var url = "/pentaho/plugin/tapa/api/getconfig";
+				var url = "../../../plugin/tapa/api/getconfig";
 		    	return $http.get(url);
 	    	},
 
 	    	disablePlugin : function(){
-	    		var url = "/pentaho/plugin/tapa/api/disableplugin";
+	    		var url = "../../../plugin/tapa/api/disableplugin";
 		    	return $http.get(url);
 	    	},
 
 	    	enablePlugin : function(){
-	    		var url = "/pentaho/plugin/tapa/api/enableplugin";
+	    		var url = "../../../plugin/tapa/api/enableplugin";
 		    	return $http.get(url);
 	    	},
 
 	    	setSplashScreen : function(showSplashScreen){
-	    		var url = "/pentaho/plugin/tapa/api/setsplashscreen?paramshowSplashScreen="
+	    		var url = "../../../plugin/tapa/api/setsplashscreen?paramshowSplashScreen="
 	    					+showSplashScreen;
 		    	return $http.get(url);
 	    	}
