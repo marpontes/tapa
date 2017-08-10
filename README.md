@@ -35,9 +35,21 @@ git checkout dev
     </property>
   </bean>
 ```
-* Now on the same file, find the `<bean>` with the `id="filterChainProxy"` and to the list of `<sec:filter-chain...` arguments, add to the beginning (1st item on list)
-```xml
-<sec:filter-chain pattern="/content/tapa/resources/templates/*/assets/**"                  filters="securityContextHolderAwareRequestFilterForWS,httpSessionPentahoSessionContextIntegrationFilter,httpSessionContextIntegrationFilter,basicProcessingFilter,requestParameterProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilterForWS,filterInvocationInterceptorForTapa" />
-```
+* Now on the same file, find the `<bean>` with the `id="filterChainProxy"` and
+    - Duplicate the line with the pattern `pattern="/**"`
+    ```xml
+    <sec:filter-chain pattern="/**" filters="securi..." />
+    <sec:filter-chain pattern="/**" filters="securi..." />
+    ```
+    - On the first dupe line, change the pattern for `/content/tapa/resources/templates/*/assets/**`
+    ```xml
+    <sec:filter-chain pattern="/content/tapa/resources/templates/*/assets/**" filters="securi..." />
+    <sec:filter-chain pattern="/**" filters="securi..." />
+    ```
+    - Again, on this line you've generated, replace the last item on the list `filters=` from `filterInvocationInterceptor` to``filterInvocationInterceptorForTapa` - be careful not to add white spaces
+    ```xml
+    <sec:filter-chain pattern="/content/tapa/resources/templates/*/assets/**" filters="...,filterInvocationInterceptorForTapa" />
+    <sec:filter-chain pattern="/**" filters="...,filterInvocationInterceptor" />
+    ```
 
 **3. Restart Pentaho Server**
