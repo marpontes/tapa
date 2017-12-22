@@ -18,24 +18,18 @@
 <%@ taglib prefix='c' uri='http://java.sun.com/jstl/core'%>
 <%@
     page language="java"
-    import="org.springframework.security.ui.AbstractProcessingFilter,
-            org.springframework.security.ui.webapp.AuthenticationProcessingFilter,
-            org.springframework.security.ui.savedrequest.SavedRequest,
-            org.springframework.security.AuthenticationException,
-            org.pentaho.platform.uifoundation.component.HtmlComponent,
+    import="org.springframework.security.web.savedrequest.SavedRequest,
             org.pentaho.platform.engine.core.system.PentahoSystem,
             org.pentaho.platform.util.messages.LocaleHelper,
             org.pentaho.platform.api.engine.IPentahoSession,
-            org.pentaho.platform.web.http.WebTemplateHelper,
-            org.pentaho.platform.api.engine.IUITemplater,
-      org.pentaho.platform.api.engine.IPluginManager,
+            org.pentaho.platform.api.engine.IPluginManager,
             org.pentaho.platform.web.jsp.messages.Messages,
             java.util.List,
             java.util.ArrayList,
             java.util.StringTokenizer,
             org.apache.commons.lang.StringEscapeUtils,
             org.pentaho.platform.engine.core.system.PentahoSessionHolder,
-            org.owasp.esapi.ESAPI,
+            org.owasp.encoder.Encode,
             org.pentaho.platform.util.ServerTypeUtil,
             java.util.HashMap,
             java.util.Map,
@@ -52,6 +46,7 @@
   // List of request URL strings to look for to send 401
 
   private List<String> send401RequestList;
+  public final String SPRING_SECURITY_SAVED_REQUEST_KEY = "SPRING_SECURITY_SAVED_REQUEST";
 
   public void jspInit() {
     // super.jspInit();
@@ -85,10 +80,10 @@
   // SPRING_SECURITY_SAVED_REQUEST_KEY contains the URL the user originally wanted before being redirected to the login page
   // if the requested url is in the list of URLs specified in the web.xml's init-param send401List,
   // then return a 401 status now and don't show a login page (401 means not authenticated)
-  Object reqObj = request.getSession().getAttribute(AbstractProcessingFilter.SPRING_SECURITY_SAVED_REQUEST_KEY);
+  Object reqObj = request.getSession().getAttribute(SPRING_SECURITY_SAVED_REQUEST_KEY);
   String requestedURL = "";
   if (reqObj != null) {
-    requestedURL = ((SavedRequest) reqObj).getFullRequestUrl();
+    requestedURL = ((SavedRequest) reqObj).getRedirectUrl();
 
     String lookFor;
     for (int i=0; i<send401RequestList.size(); i++) {
@@ -138,7 +133,7 @@
           if (startupUrl != null && name != null){
 
             //Sanitize the values assigned
-            mobileRedirect += "?name=" + ESAPI.encoder().encodeForJavaScript(name) + "&startup-url=" + ESAPI.encoder().encodeForJavaScript(startupUrl);
+            mobileRedirect += "?name=" + Encode.forJavaScript(name) + "&startup-url=" + Encode.forJavaScript(startupUrl);
 
           }
   %>
@@ -196,7 +191,7 @@
   Map<String, Object> tapaContext = new HashMap<String, Object>();
 
   tapaContext.put(  "TAPA_TITLE"         , Messages.getInstance().getString("UI.PUC.TITLE")  );
-  tapaContext.put(  "TAPA_LOCALE"        , ESAPI.encoder().encodeForHTMLAttribute(request.getLocale().toString())  );
+  tapaContext.put(  "TAPA_LOCALE"        , Encode.forHtmlAttribute(request.getLocale().toString())  );
   tapaContext.put(  "TAPA_LOGIN_TITLE"   , Messages.getInstance().getString("UI.PUC.LOGIN.TITLE")  );
   tapaContext.put(  "TAPA_USERNAME"      , Messages.getInstance().getString("UI.PUC.LOGIN.USERNAME")  );
   tapaContext.put(  "TAPA_PASSWORD"      , Messages.getInstance().getString("UI.PUC.LOGIN.PASSWORD")  );
@@ -209,7 +204,7 @@
   tapaContext.put(  "TAPA_ERROR_CAPTION" , Messages.getInstance().getString("UI.PUC.LOGIN.ERROR.CAPTION")  );
   tapaContext.put(  "TAPA_LOGIN_ERROR"   , Messages.getInstance().getString("UI.PUC.LOGIN.ERROR")  );
   tapaContext.put(  "TAPA_LOGIN_OK"      , Messages.getInstance().getString("UI.PUC.LOGIN.OK")  );
-  tapaContext.put(  "TAPA_REQUESTED_URL" , ESAPI.encoder().encodeForJavaScript(requestedURL)  );
+  tapaContext.put(  "TAPA_REQUESTED_URL" , Encode.forJavaScript(requestedURL)  );
   tapaContext.put(  "TAPA_SHOWUSERS"     , showUsers  );
   tapaContext.put(  "TAPA_LOGGEDIN"      , loggedIn  );
 
