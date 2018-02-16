@@ -680,7 +680,7 @@ UUID: ${uuid}</logmessage>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>480</xloc>
-      <yloc>832</yloc>
+      <yloc>928</yloc>
     </entry>
     <entry>
       <name>[LOG] HOT file ok 2</name>
@@ -715,7 +715,7 @@ UUID: ${uuid}</logmessage>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>576</xloc>
-      <yloc>960</yloc>
+      <yloc>1008</yloc>
     </entry>
     <entry>
       <name>Copy Files</name>
@@ -764,6 +764,36 @@ UUID: ${uuid}</logmessage>
       <xloc>464</xloc>
       <yloc>192</yloc>
     </entry>
+    <entry>
+      <name>shouldrestart</name>
+      <description />
+      <type>WRITE_TO_FILE</type>
+      <filename>${cpk.plugin.dir}/static/shouldrestart</filename>
+      <createParentFolder>N</createParentFolder>
+      <appendFile>N</appendFile>
+      <content>${SHOULD_RESTART}</content>
+      <encoding>UTF-8</encoding>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>208</xloc>
+      <yloc>256</yloc>
+    </entry>
+    <entry>
+      <name>shouldrestart 2</name>
+      <description />
+      <type>WRITE_TO_FILE</type>
+      <filename>${cpk.plugin.dir}/static/shouldrestart</filename>
+      <createParentFolder>N</createParentFolder>
+      <appendFile>N</appendFile>
+      <content>yes${jvmpid}</content>
+      <encoding>UTF-8</encoding>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>672</xloc>
+      <yloc>928</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -791,15 +821,6 @@ UUID: ${uuid}</logmessage>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>patchlock C</from>
-      <to>vars</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -956,13 +977,40 @@ UUID: ${uuid}</logmessage>
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>[LOG] HOT file ok 2</from>
-      <to>libera .patchlock</to>
+      <from>patchlock C</from>
+      <to>shouldrestart</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>shouldrestart</from>
+      <to>vars</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>[LOG] HOT file ok 2</from>
+      <to>shouldrestart 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>shouldrestart 2</from>
+      <to>libera .patchlock</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
