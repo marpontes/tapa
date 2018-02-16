@@ -22,6 +22,11 @@
 <body class="pentaho-page-background">
 <div id="login-wrapper">
   <div id="login-background">
+    {% if TAPA_SHOULDRESTART == "yes" %}
+      <div class="alert alert-warning">
+        <strong>Warning!</strong> You must restart your server once more to get TAPA working properly. Some security rules have just been applied.
+      </div>
+    {% endif %} 
     <div id="login-logo"></div>
 
     <div id="login-form-container">
