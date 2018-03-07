@@ -24,6 +24,9 @@
             org.pentaho.platform.api.engine.IPentahoSession,
             org.pentaho.platform.api.engine.IPluginManager,
             org.pentaho.platform.web.jsp.messages.Messages,
+            java.nio.charset.StandardCharsets,
+            java.nio.file.Files,
+            java.nio.file.Paths,
             java.util.List,
             java.util.ArrayList,
             java.util.StringTokenizer,
@@ -187,6 +190,20 @@
   IPluginManager plugMan = PentahoSystem.get(IPluginManager.class, PentahoSessionHolder.getSession());
   Object generatedTemplate = null;
 
+  // ---- START - block to determine if another restart is needed
+
+  String solutionPath = PentahoSystem.getApplicationContext().getSolutionRootPath() + "/system/tapa/static/shouldrestart";
+  String shouldRestart;
+
+
+  try{
+    shouldRestart = new String(Files.readAllBytes(Paths.get(solutionPath)), StandardCharsets.UTF_8);
+    shouldRestart = (shouldRestart != null && shouldRestart.startsWith("yes")) ? "yes" : "no";
+  }catch(Exception e){
+    shouldRestart = "error";
+  }
+
+  // ---- END - block to determine if another restart is needed
 
   Map<String, Object> tapaContext = new HashMap<String, Object>();
 
@@ -207,6 +224,7 @@
   tapaContext.put(  "TAPA_REQUESTED_URL" , Encode.forJavaScript(requestedURL)  );
   tapaContext.put(  "TAPA_SHOWUSERS"     , showUsers  );
   tapaContext.put(  "TAPA_LOGGEDIN"      , loggedIn  );
+  tapaContext.put(  "TAPA_SHOULDRESTART" , shouldRestart  );
 
 
 /*  --------------------------------
