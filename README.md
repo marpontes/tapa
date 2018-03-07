@@ -3,20 +3,28 @@ tapa
 
 ## What it does?
 
-Tapa is a PUCLogin modifier that also delivers css/js injection to Mantle. And it does it in a minimally invasive fashion. The plugin installs itself and **only** patches your PUCLogin.jsp - keeping a backup of it.
+Tapa is a PUCLogin modifier that also delivers css/js injection to Pentaho User Console. And it does it in a minimally invasive fashion. The plugin installs itself and **only** patches your `PUCLogin.jsp` and your `applicationContext-spring-security.xml` - keeping backups of both.
 
 ## Why tapa?
 
 Tapa uses [Pebble template engine](http://www.mitchellbosecke.com/pebble/home) to simplify your job while customizing Pentaho's login page.
 
-And because it also injects js/css files to your Mantle context [in the best way possible](http://wiki.pentaho.com/display/ServerDoc2x/Developing+Plugins#DevelopingPlugins-DefiningExternalResources%28asof4.0%29) you can take advantage of this to make modifications on your mantle and/or deliver some js applications through Pentaho js APIs.
+And because it also injects js/css files to your Mantle context [in the best way possible](http://wiki.pentaho.com/display/ServerDoc2x/Developing+Plugins#DevelopingPlugins-DefiningExternalResources%28asof4.0%29) you can take advantage of this to make modifications on your Pentaho User Console and/or deliver some js applications through Pentaho js APIs.
 
 ## How to install
+
+The easy way
+1. Open Marketplace on your Pentaho User Console
+2. Find tapa and install it;
+3. Restart your Pentaho Server 2x (yes, twice);
+
+> If you have the Pentaho Server Enterprise, you need to first activate Marketplace on your server. To see how, open the [Marketplace page](http://www.pentaho.com/marketplace/) and click **"Find Marketplace"**.
+
+If you prefer install the _hard_ way, you can clone it directly:
 
 ```bash
 $ cd pentaho-solutions/system
 $ git clone https://github.com/marpontes/tapa.git tapa
-
 ```
 
 ## Using it
@@ -101,7 +109,7 @@ As you can see, there are STATIC_ text variables that you can use on your templa
 
 # TODO:
 
-The documentation is sparse - there's docs on tapa's upload template dialog; on tapa's splash screen and on this wiki. We need to put it all together in a Wiki on this repository.
+The documentation is sparse - there are docs on tapa's upload template dialog; on tapa's splash screen and on this wiki. We need to put it all together in a Wiki on this repository.
 
 # Architecture diagram
 
