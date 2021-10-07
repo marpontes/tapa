@@ -16,7 +16,7 @@
     <bean id="tapa.uploader.api" class="com.oncase.biserver.ws.UploaderREST"/>
     <bean id="tapa.render.api" class="com.oncase.tapa.ws.TapaApi">
     <property name="factory">
-      <ref local="tapaTemplateFactory" />
+      <ref bean="tapaTemplateFactory" />
     </property>
     </bean>
 
